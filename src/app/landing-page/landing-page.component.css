@@ -1,0 +1,91 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1a1a2e;
+  color: white;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  height: 100vh; /* Stellt sicher, dass der Container die volle Bildschirmhöhe einnimmt */
+  width: 100vw; /* Stellt sicher, dass der Container die volle Bildschirmbreite einnimmt */
+}
+
+.left-side, .right-side {
+  flex: 1; /* Jede Seite nimmt genau die Hälfte des Containers ein */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.right-side {
+  background-color: #00000076;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 2rem;
+  margin: 20px 0;
+}
+
+.login-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-buttons a {
+  padding: 10px 20px;
+  margin: 10px 0;
+  color: white !important;
+  background-color: #e94560;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.login-buttons a:hover {
+  background-color: #0f3460;
+}
+
+.footer {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+a {
+  color: #e94560;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #c1354e;
+}
+
+@keyframes subtitleAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate {
+  animation: subtitleAnimation 0.5s ease forwards;
+}
