@@ -13,6 +13,8 @@ import { SignupComponent } from './signup/signup.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { QrScannerComponent } from './qr-scanner/qr-scanner.component';
 import { ItemModalsComponent } from './Item-Modals/item-modals.component';
+import { MenuPageComponent } from './menu-page/menu-page.component';
+import { MenuPage2Component } from './menu-page2/menu-page2.component';
 
 
 
@@ -47,6 +49,16 @@ const routes: Routes = [
   {
     path: 'menu',
     component: MenuComponent,
+    canActivate:[authGuard]
+  },
+  {
+    path: 'menu-page',
+    component: MenuPageComponent,
+    canActivate:[authGuard]
+  },
+  {
+    path: 'menu-page2',
+    component: MenuPage2Component,
     canActivate:[authGuard]
   },
   {

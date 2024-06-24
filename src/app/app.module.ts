@@ -34,6 +34,8 @@ import { SaladItemModalComponent } from './Item-Modals/salad-item-modal/salad-it
 import { ItemModalsComponent } from './Item-Modals/item-modals.component';
 import { CartService } from 'src/services/cart.service';
 import { PizzaItemModalComponent } from './Item-Modals/pizza-item-modal/pizza-item-modal.component';
+import { MenuPageComponent } from './menu-page/menu-page.component';
+import { MenuPage2Component } from './menu-page2/menu-page2.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +62,8 @@ import { PizzaItemModalComponent } from './Item-Modals/pizza-item-modal/pizza-it
     SaladItemModalComponent,
     ItemModalsComponent,
     PizzaItemModalComponent,
+    MenuPageComponent,
+    MenuPage2Component,
   ],
   imports: [
     BrowserModule,
