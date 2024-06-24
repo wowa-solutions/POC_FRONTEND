@@ -9,21 +9,26 @@ body, html {
 
 .container {
   display: flex;
-  height: 100vh; /* Stellt sicher, dass der Container die volle Bildschirmhöhe einnimmt */
-  width: 100vw; /* Stellt sicher, dass der Container die volle Bildschirmbreite einnimmt */
+  /* Stellt sicher, dass der Container die volle Bildschirmhöhe einnimmt */
+  min-height: 100vh; 
+    /* Stellt sicher, dass der Container die volle Bildschirmbreite einnimmt */
+  min-width: 100vw; 
 }
 
 .left-side, .right-side {
-  flex: 1; /* Jede Seite nimmt genau die Hälfte des Containers ein */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+    box-sizing: border-box; /* Füge box-sizing hinzu, um Padding und Border in die Breite einzubeziehen */
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* min-width: 50%; */ /* Falls du min-width entfernt hast, wird das hier nicht benötigt */
 }
 
 
 .right-side {
   background-color: #00000076;
+  ;
 }
 
 .title {
@@ -32,6 +37,11 @@ body, html {
 }
 
 .subtitle {
+  font-size: 2rem;
+  margin: 20px 0;
+}
+
+.subtitle2 {
   font-size: 2rem;
   margin: 20px 0;
 }

@@ -10,20 +10,21 @@
 </head>
 <body>
 
-<div class="login-container">
-    <img src="logo.png" alt="Logo" style="margin-bottom: 30px;"> <!-- Replace with your logo link -->
-    <h2>Konto erstellen</h2>
-    <input type="email" placeholder="E-Mail-Adresse">
-    <input type="password" placeholder="Password">
-    <input type="submit" value="Weiter">
-    <div class="footer">Sie haben schon ein Konto? <a href="/login">Login</a></div>
-    <div class="alternative"></div>
-    <div class="social-login">
-        <button><img src="../../assets/Google.png" alt="Google"><br>Mit Google fortfahren</button>
-        <button><img src="../../assets/Microsoft.svg" alt="Microsoft"><br>Mit Microsoft-Konto fortfahren</button>
-        <button><img src="../../assets/Apple.svg" alt="Apple"><br>Mit Apple fortfahren</button>
+    <form [formGroup]="signupForm">
+        <div class="login-container">
+        <input type="email" [formControl]="signupForm.controls.Email" placeholder="E-Mail-Adresse">
+        <input type="text" [formControl]="signupForm.controls.Username" placeholder="Username">
+        <input type="password" [formControl]="signupForm.controls.Password" placeholder="Password">
+        <button class="signupFormButton" type="submit" value="Weiter" (click)="signUpProcess()">Login</button>
+        <div class="footer">Sie haben bereits ein Konto? <a href="/login">Login</a></div>
+        <div class="alternative"></div>
+        <div class="social-login">
+            <button><img src="../../assets/Google.png" alt="Google"><br>Mit Google fortfahren</button>
+            <button><img src="../../assets/Microsoft.svg" alt="Microsoft"><br>Mit Microsoft-Konto fortfahren</button>
+            <button><img src="../../assets/Apple.svg" alt="Apple"><br>Mit Apple fortfahren</button>
+        </div>
     </div>
-</div>
+    </form>
 
 </body>
 </html>

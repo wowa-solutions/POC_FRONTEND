@@ -19,14 +19,6 @@ export class LoginComponent implements OnInit {
     }
 
     ngOnInit(): void {
-
-      // Example for HTTP Request
-      // this.http.get<Todos[]>('https://jsonplaceholder.typicode.com/todos').subscribe(data => 
-      // {        
-      //   for(var item of data){
-      //     console.log(item.title);
-      //   }
-      // });
     }
 
     signupForm = this.formBuilder.group({
@@ -37,6 +29,7 @@ export class LoginComponent implements OnInit {
 
     loginForm = this.formBuilder.group({
       Email: '',
+      // UserName: '',
       Password: ''
     });
 
@@ -56,8 +49,18 @@ export class LoginComponent implements OnInit {
     }
 
     loginProcess(){
-      // ToDo: Add Login process here
-      this.router.navigate(['/qr']);      
+      var validUser = false;
+      console.log({email: this.loginForm.value.Email, username: '', password: this.loginForm.value.Password});
+      this.http.post('http://localhost:3000/login/', {email: this.loginForm.value.Email, username: '', password: this.loginForm.value.Password}).subscribe(data => 
+      {        
+        console.log("User valid: ", data);
+        if(data === true){
+          this.router.navigate(['/qr']); 
+        }
+        else{
+          console.log("Try again.");
+        }
+      });
     }
 
     signUpProcess(){

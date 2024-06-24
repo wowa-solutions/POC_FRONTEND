@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, catchError, of } from 'rxjs';
 import { Dishes } from 'src/models/models';
 
 @Injectable({
@@ -11,9 +12,14 @@ export class ProductService {
 
   }
 
-  getAllProducts(){
-    return this.http.get('https://api.github.com/users/Bard');
-  }
+    getAllProducts(): Observable<Dishes[]> {
+      return this.http.get<Dishes[]>('http://localhost:3000/items/').pipe(
+        catchError(error => {
+          console.error("Error fetching data: ", error);
+          return of([]); // Rückgabe eines leeren Arrays im Fehlerfall
+        })
+      );
+    }
 
   getProductById(){
     this.http.get<Dishes>('https://reqres.in/api/posts').subscribe(response => {
