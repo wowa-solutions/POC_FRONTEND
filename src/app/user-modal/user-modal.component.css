@@ -1,0 +1,116 @@
+/* cart-modal.component.css */
+.userModal {
+    display: block; /* Standardmäßig ausgeblendet */
+    position: fixed; /* Position fest */
+    z-index: 1; /* Über allem anderen */
+    right: 0; /* Ganz rechts */
+    top: 60px; /* Ganz oben */
+    width: 10%; /* Breite des Modals */
+    height: auto; /* Volle Höhe */
+    overflow: auto; /* Scrollen aktivieren, falls nötig */
+    background-color: white; /* Schwarzer Hintergrund mit Opazität */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #f8f9fa;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+    height: auto; /* Höhe automatisch an den Inhalt anpassen */
+    min-height: 50vh; /* maximale Höhe */
+  }
+  
+  .modal-dialog {
+    max-width: 90%; /* oder eine spezifische Breite, z.B. 800px */
+  }
+
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+    
+  .item-quantity select {
+    width: auto;
+  }
+  
+  .item-price span {
+    font-weight: bold;
+  }
+  
+  .cart-total {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .item-title{
+    min-width:300px;
+  }
+
+  /* Stil für die Artikel im Warenkorb */
+  .cart-item {
+    grid-template-columns: 1fr 2fr 1fr; /* Aufteilung in Spalten: Bild, Titel, Preis */
+    gap: 15px; /* Abstand zwischen den Elementen */
+    align-items: center;
+    display: flex;
+    align-items: center; /* Zentrierung der Elemente vertikal */
+    margin-bottom: 10px; /* Kleinerer Abstand zwischen den Elementen */
+  }
+
+  .item-info .item-title {
+    text-align: left;
+    font-weight: bold; /* Fett für bessere Lesbarkeit */
+    margin-left: 25px; /* Kleinerer Abstand zum Preis */
+  }
+
+  .item-quantity select {
+    width: auto;
+  }
+
+  .item-price span {
+    font-weight: bold;
+  }
+
+  /* cart-modal.component.css */
+  .cart-item {
+    display: flex;
+    align-items: center; /* Zentrierung der Elemente vertikal */
+    margin-bottom: 10px; /* Kleinerer Abstand zwischen den Elementen */
+  }
+
+  .item-quantity select {
+    width: auto;
+    margin-right: 10px; /* Kleinerer Abstand zum Preis */
+  }
+
+  .item-price span {
+    font-weight: bold;
+    margin-right: 10px; /* Kleinerer Abstand zum Preis */
+  }
+
+  .img-custom{
+    width: 120px;
+    height: 120px;
+  }

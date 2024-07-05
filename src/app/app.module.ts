@@ -36,6 +36,7 @@ import { CartService } from 'src/services/cart.service';
 import { PizzaItemModalComponent } from './Item-Modals/pizza-item-modal/pizza-item-modal.component';
 import { MenuPageComponent } from './menu-page/menu-page.component';
 import { MenuPage2Component } from './menu-page2/menu-page2.component';
+import { UserModalComponent } from './user-modal/user-modal.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { MenuPage2Component } from './menu-page2/menu-page2.component';
     PizzaItemModalComponent,
     MenuPageComponent,
     MenuPage2Component,
+    UserModalComponent,
   ],
   imports: [
     BrowserModule,

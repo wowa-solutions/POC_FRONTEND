@@ -2,86 +2,46 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { PaymentComponent } from './payment/payment.component';
-import { OrderingComponent } from './ordering/ordering.component';
 import { MenuComponent } from './menu/menu.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { MenuItemComponent } from './Item-Modals/menu-item/menu-item.component';
 import { CartComponent } from './cart/cart.component';
-import { authGuard } from './auth/auth.guard';
 import { SignupComponent } from './signup/signup.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { QrScannerComponent } from './qr-scanner/qr-scanner.component';
-import { ItemModalsComponent } from './Item-Modals/item-modals.component';
 import { MenuPageComponent } from './menu-page/menu-page.component';
 import { MenuPage2Component } from './menu-page2/menu-page2.component';
+import { AuthGuard } from './auth/auth.guard';
 
 
 
 const routes: Routes = [
-
   {
     path: '',
-    component: LandingPageComponent
+    component: LandingPageComponent,
+    canActivate: [AuthGuard],
+    canDeactivate: [AuthGuard]
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [AuthGuard],
+    canDeactivate: [AuthGuard]
   },
   {
     path: 'signup',
-    component: SignupComponent
+    component: SignupComponent,
+    canActivate: [AuthGuard],
+    canDeactivate: [AuthGuard]
   },
-  {
-    path: 'mainpage',
-    component: MainpageComponent
-  },
-  {
-    path: 'payment',
-    component: PaymentComponent,
-    canActivate:[authGuard]
-  },
-  // {
-  //   path: 'ordering',
-  //   component: OrderingComponent,
-  //   canActivate:[authGuard]
-  // },
-  {
-    path: 'menu',
-    component: MenuComponent,
-    canActivate:[authGuard]
-  },
-  {
-    path: 'menu-page',
-    component: MenuPageComponent,
-    canActivate:[authGuard]
-  },
-  {
-    path: 'menu-page2',
-    component: MenuPage2Component,
-    canActivate:[authGuard]
-  },
-  {
-    path: 'cart',
-    component: CartComponent
-    // redirectTo: ''
-  },
-  {
-    path: 'qr',
-    component: QrScannerComponent
-    // redirectTo: ''
-  },
-  {
-    path: 'item-modals',
-    component: ItemModalsComponent
-    // redirectTo: ''
-  },
-  {
-    path: '**',
-    component: NotFoundPageComponent
-    // redirectTo: ''
-  },
-
+  { path: 'mainpage', component: MainpageComponent, canActivate: [AuthGuard] },
+  { path: 'payment', component: PaymentComponent, canActivate: [AuthGuard] },
+  { path: 'menu', component: MenuComponent, canActivate: [AuthGuard] },
+  { path: 'menu-page', component: MenuPageComponent, canActivate: [AuthGuard] },
+  { path: 'menu-page2', component: MenuPage2Component, canActivate: [AuthGuard] },
+  { path: 'cart', component: CartComponent, canActivate: [AuthGuard] },
+  { path: 'qr', component: QrScannerComponent, canActivate: [AuthGuard] },
+  { path: '**', component: NotFoundPageComponent },
 ];
 
 @NgModule({
