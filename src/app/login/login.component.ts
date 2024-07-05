@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Todos } from 'src/models/models';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
 
 
 
-    constructor(private http: HttpClient, private formBuilder: FormBuilder, private router: Router){
+    constructor(private http: HttpClient, private formBuilder: FormBuilder, private router: Router, private loginService: LoginService){
 
     }
 
@@ -48,19 +49,13 @@ export class LoginComponent implements OnInit {
       this.signupForm.reset();
     }
 
-    loginProcess(){
-      var validUser = false;
-      console.log({email: this.loginForm.value.Email, username: '', password: this.loginForm.value.Password});
-      this.http.post('http://localhost:3000/login/', {email: this.loginForm.value.Email, username: '', password: this.loginForm.value.Password}).subscribe(data => 
-      {        
-        console.log("User valid: ", data);
-        if(data === true){
-          this.router.navigate(['/qr']); 
-        }
-        else{
-          console.log("Try again.");
-        }
-      });
+    loginProcess(): void {
+
+      var userEmail = this.loginForm.value.Email?.toString();
+      var userPassword = this.loginForm.value.Password?.toString();
+
+      this.loginService.loginProcess(userEmail, userPassword);
+      console.log({ email: this.loginForm.value.Email, password: this.loginForm.value.Password });
     }
 
     signUpProcess(){

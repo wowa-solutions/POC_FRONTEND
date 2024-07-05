@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.css']
 })
-export class LandingPageComponent implements OnInit{
+export class LandingPageComponent implements OnInit {
 
   subtitles: string[] = ["Die besten Restaurants.", "Die besten Angebote.", "In deiner Nähe."];
   currentIndex: number = 0;
@@ -31,6 +30,6 @@ export class LandingPageComponent implements OnInit{
             this.currentIndex = (this.currentIndex + 1) % this.subtitles.length;
         }, 1500);
     }, 1500);
-}
+  }
   
 }

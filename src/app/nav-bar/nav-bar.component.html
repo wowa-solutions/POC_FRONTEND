@@ -33,10 +33,7 @@
           <a class="nav-link" routerLink="/cart">Cart</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/qr">QR</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/item-modals">Item-Modals</a>
+          <a class="nav-link" routerLink="/qr">QR-Code</a>
         </li>
       </ul>
     </div>
@@ -44,7 +41,9 @@
       <i class="fas fa-cart-shopping" style="margin-right:20px; cursor: pointer;"
          [@cartBounce]="cartState" (click)="cartModal.openModal()"></i>
       <app-cart-modal #cartModal></app-cart-modal>      
-      <i class="fas fa-user" style="margin-right:20px; cursor: pointer;"></i>
+
+      <i class="fas fa-user" style="margin-right:20px; cursor: pointer;" (click)="userModal.openModal()"></i>
+      <app-user-modal #userModal></app-user-modal>
     </div>
     
     
