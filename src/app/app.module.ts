@@ -23,7 +23,6 @@ import { BrowserAnimationsModule }
     from "@angular/platform-browser/animations"; 
 import { DataViewModule } from "primeng/dataview";
 import { CartComponent } from './cart/cart.component';
-import { ProductService } from '../services/product.service';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { SignupComponent } from './signup/signup.component';
 import { CartModalComponent } from './cart-modal/cart-modal.component';
@@ -33,11 +32,14 @@ import { BurgerItemModalComponent } from './Item-Modals/burger-item-modal/burger
 import { DesertItemModalComponent } from './Item-Modals/desert-item-modal/desert-item-modal.component';
 import { SaladItemModalComponent } from './Item-Modals/salad-item-modal/salad-item-modal.component';
 import { ItemModalsComponent } from './Item-Modals/item-modals.component';
-import { CartService } from 'src/services/cart.service';
 import { PizzaItemModalComponent } from './Item-Modals/pizza-item-modal/pizza-item-modal.component';
 import { MenuPageComponent } from './menu-page/menu-page.component';
 import { MenuPage2Component } from './menu-page2/menu-page2.component';
 import { UserModalComponent } from './user-modal/user-modal.component';
+import { ToastrModule } from 'ngx-toastr';
+import { CartService } from '../services/cart.service';
+import { ProductService } from '../services/product.service';
+ToastrModule.forRoot() // ToastrModule importiert
 
 @NgModule({
   declarations: [
@@ -70,6 +72,12 @@ import { UserModalComponent } from './user-modal/user-modal.component';
   ],
   imports: [
     BrowserModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      positionClass: 'toast-top-center',
+      preventDuplicates: true,
+      progressBar: true,
+    }),
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
@@ -78,7 +86,8 @@ import { UserModalComponent } from './user-modal/user-modal.component';
     ButtonModule,
     InputTextModule,
     DataViewModule,  
-    TableModule
+    TableModule,
+
   ],
   providers: [CartService, ProductService],
   bootstrap: [AppComponent]

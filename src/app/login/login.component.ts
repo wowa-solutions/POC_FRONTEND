@@ -1,10 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Todos } from 'src/models/models';
-import { ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/services/login.service';
+import { ToastService } from 'src/services/toastr.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +14,7 @@ export class LoginComponent implements OnInit {
 
 
 
-    constructor(private http: HttpClient, private formBuilder: FormBuilder, private router: Router, private loginService: LoginService){
+    constructor(private http: HttpClient, private formBuilder: FormBuilder, private router: Router, private loginService: LoginService, private toastService: ToastService){
 
     }
 
@@ -53,8 +52,8 @@ export class LoginComponent implements OnInit {
 
       var userEmail = this.loginForm.value.Email?.toString();
       var userPassword = this.loginForm.value.Password?.toString();
-
       this.loginService.loginProcess(userEmail, userPassword);
+
       console.log({ email: this.loginForm.value.Email, password: this.loginForm.value.Password });
     }
 
@@ -62,5 +61,4 @@ export class LoginComponent implements OnInit {
       // ToDo: Add Login process here
       this.router.navigate(['/qr']);      
     }
-
 }
