@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CartService } from '../../services/cart.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -25,8 +26,9 @@ export class NavBarComponent {
   private subscription: Subscription;
 
   cartState: string = 'small'; // Startzustand
+  isMenuOpen = false;
 
-  constructor(private cartService: CartService) {
+  constructor(private cartService: CartService, private router: Router) {
     this.subscription = this.cartService.addItem$.subscribe(() => {
       this.cartState = 'large'; // Zustand wird auf 'large' geändert, um die Animation auszulösen
       setTimeout(() => {
@@ -37,5 +39,14 @@ export class NavBarComponent {
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  navigateAndClose(route: string) {
+    this.router.navigate([route]);
+    this.isMenuOpen = false;
   }
 }

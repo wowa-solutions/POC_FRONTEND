@@ -16,7 +16,7 @@ export class LoginService {
         this.toastService.showSuccess("User is logged in.", "Login successful.");
         setTimeout(() => {
           window.location.reload();
-        }, 3000);
+        }, 1500);
       } else {
         this.toastService.showError("User is not logged in.", "Login failed.");
       }

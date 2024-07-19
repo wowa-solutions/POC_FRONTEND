@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./menu-page.component.css']
 })
 export class MenuPageComponent {
+  isMenuOpen: boolean = false;
+  menuItems: string[] = ['Startseite', 'HHC Vapes', 'THCp Vapes', 'THC Vapes', 'HHC Spacejellies', 'Wissen', 'Kontakt'];
 
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 }
