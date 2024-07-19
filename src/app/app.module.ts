@@ -15,6 +15,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MenuItemComponent } from './Item-Modals/menu-item/menu-item.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
+import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { LandingPageComponent } from './landing-page/landing-page.component';
@@ -65,7 +66,7 @@ import { UserModalComponent } from './user-modal/user-modal.component';
     PizzaItemModalComponent,
     MenuPageComponent,
     MenuPage2Component,
-    UserModalComponent,
+    UserModalComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +78,7 @@ import { UserModalComponent } from './user-modal/user-modal.component';
     ButtonModule,
     InputTextModule,
     DataViewModule,  
-    FormsModule
+    TableModule
   ],
   providers: [CartService, ProductService],
   bootstrap: [AppComponent]
