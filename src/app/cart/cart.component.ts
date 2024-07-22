@@ -5,7 +5,7 @@ import { CartService } from 'src/services/cart.service';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
   totalSum: number = 0;
@@ -19,24 +19,26 @@ export class CartComponent implements OnInit {
     // Add more filter options as needed
   ];
 
-  constructor(private cartService: CartService)
-  {
+  constructor(private cartService: CartService) {
     this.updateTotal();
-  };
+  }
 
   updateTotal() {
-    this.totalSum = this.cartItems.reduce((sum, item) => sum + (item.quantity * item.price), 0);
+    this.totalSum = this.cartItems.reduce(
+      (sum, item) => sum + item.quantity * item.price,
+      0,
+    );
     this.totalSum = +this.totalSum.toFixed(2);
   }
 
   ngOnInit(): void {
-    this.cartService.cartItems$.subscribe(items => {
+    this.cartService.cartItems$.subscribe((items) => {
       this.cartItems = items;
       this.updateTotal();
     });
   }
 
-  removeFromCartService(item: Dishes){
+  removeFromCartService(item: Dishes) {
     this.cartService.removeFromCart(item);
   }
 }

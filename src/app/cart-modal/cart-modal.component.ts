@@ -6,10 +6,9 @@ import { DishType } from '../enums/enums';
 @Component({
   selector: 'app-cart-modal',
   templateUrl: './cart-modal.component.html',
-  styleUrls: ['./cart-modal.component.css']
+  styleUrls: ['./cart-modal.component.css'],
 })
 export class CartModalComponent implements OnInit {
-
   showModal: boolean = false;
   cartItems: Dishes[] = [
     // { id: '0', title: 'Lasagne', description: 'Eine original italienische Lasagne mit Hackfleisch.', price: 9.99, link: 'https://img.chefkoch-cdn.de/rezepte/745721177147257/bilder/668335/crop-960x540/lasagne.jpg', quantity: 2, ingredients: []},
@@ -26,7 +25,7 @@ export class CartModalComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.cartService.cartItems$.subscribe(items => {
+    this.cartService.cartItems$.subscribe((items) => {
       this.cartItems = items;
       this.updateTotal();
     });
@@ -34,7 +33,16 @@ export class CartModalComponent implements OnInit {
 
   totalSum: number = 0;
 
-  onMenuItemAddedToCart(newItem: {itemId: string, itemTitle: string, itemDescription: string, itemPrice: number, itemLink: string, itemQuantity: number, itemIngredients: string[], itemDishType: DishType}) {
+  onMenuItemAddedToCart(newItem: {
+    itemId: string;
+    itemTitle: string;
+    itemDescription: string;
+    itemPrice: number;
+    itemLink: string;
+    itemQuantity: number;
+    itemIngredients: string[];
+    itemDishType: DishType;
+  }) {
     this.cartItems.push({
       id: newItem.itemId,
       title: newItem.itemTitle,
@@ -43,12 +51,15 @@ export class CartModalComponent implements OnInit {
       link: newItem.itemLink,
       quantity: newItem.itemQuantity,
       ingredients: newItem.itemIngredients,
-      dishType: newItem.itemDishType
+      dishType: newItem.itemDishType,
     });
   }
 
   updateTotal() {
-    this.totalSum = this.cartItems.reduce((sum, item) => sum + (item.quantity * item.price), 0);
+    this.totalSum = this.cartItems.reduce(
+      (sum, item) => sum + item.quantity * item.price,
+      0,
+    );
     this.totalSum = +this.totalSum.toFixed(2);
   }
 
@@ -60,7 +71,7 @@ export class CartModalComponent implements OnInit {
     this.showModal = false;
   }
 
-  removeFromCartService(item: Dishes){
+  removeFromCartService(item: Dishes) {
     this.cartService.removeFromCart(item);
   }
 }

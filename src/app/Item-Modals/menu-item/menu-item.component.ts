@@ -9,11 +9,20 @@ import { PizzaItemModalComponent } from '../pizza-item-modal/pizza-item-modal.co
 @Component({
   selector: 'app-menu-item',
   templateUrl: './menu-item.component.html',
-  styleUrls: ['./menu-item.component.css']
+  styleUrls: ['./menu-item.component.css'],
 })
 export class MenuItemComponent implements AfterViewInit {
   showModal: boolean = false;
-  lastItem: Dishes = { id: '', title: '', description: '', price: 0.00, link: '', quantity: 0, ingredients: [], dishType: DishType.CUSTOM };
+  lastItem: Dishes = {
+    id: '',
+    title: '',
+    description: '',
+    price: 0.0,
+    link: '',
+    quantity: 0,
+    ingredients: [],
+    dishType: DishType.CUSTOM,
+  };
   @ViewChild(PizzaItemModalComponent)
   pizzaItemModal!: PizzaItemModalComponent;
   @ViewChild(BurgerItemModalComponent)
@@ -25,8 +34,7 @@ export class MenuItemComponent implements AfterViewInit {
     // Now you can access firstChildComponent and secondChildComponent
   }
 
-  constructor(private cartService: CartService) {
-  }
+  constructor(private cartService: CartService) {}
 
   // Methode zum Öffnen des Modals
   openModal() {
@@ -39,24 +47,22 @@ export class MenuItemComponent implements AfterViewInit {
   }
 
   // Vor dem Öffnen des Modals wird das zuletzt hinzugefügte Item gespeichert
-  openItemView(item: Dishes){
+  openItemView(item: Dishes) {
     this.lastItem = item;
     if (this.lastItem.dishType === DishType.PIZZA) {
       this.pizzaItemModal.openItemView(this.lastItem);
-    } 
-    else if (this.lastItem.dishType === DishType.BURGER) {
+    } else if (this.lastItem.dishType === DishType.BURGER) {
       this.burgerItemModal.openItemView(this.lastItem);
-    }
-    else if (this.lastItem.dishType === DishType.PASTA) {
+    } else if (this.lastItem.dishType === DishType.PASTA) {
       this.pastaItemModal.openItemView(this.lastItem);
     }
 
     this.openModal();
   }
 
-  // Das Item wird dem CartService übergeben, 
+  // Das Item wird dem CartService übergeben,
   // eine Animation für das Warenkorb-Icon wird ausgeführt und das Modal wird geschlossen
-  addToCartService(){
+  addToCartService() {
     this.cartService.addToCart(this.lastItem);
     this.cartService.triggerAnimation();
     this.closeModal();

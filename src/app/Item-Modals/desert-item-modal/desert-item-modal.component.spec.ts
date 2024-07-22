@@ -8,7 +8,7 @@ describe('DesertItemModalComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DesertItemModalComponent]
+      declarations: [DesertItemModalComponent],
     });
     fixture = TestBed.createComponent(DesertItemModalComponent);
     component = fixture.componentInstance;

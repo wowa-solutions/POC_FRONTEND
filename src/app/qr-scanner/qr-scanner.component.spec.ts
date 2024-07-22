@@ -8,7 +8,7 @@ describe('QrScannerComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [QrScannerComponent]
+      declarations: [QrScannerComponent],
     });
     fixture = TestBed.createComponent(QrScannerComponent);
     component = fixture.componentInstance;

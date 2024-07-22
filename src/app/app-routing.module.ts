@@ -12,40 +12,44 @@ import { QrScannerComponent } from './qr-scanner/qr-scanner.component';
 import { MenuPageComponent } from './menu-page/menu-page.component';
 import { MenuPage2Component } from './menu-page2/menu-page2.component';
 import { AuthGuard } from './auth/auth.guard';
-
-
+import { LayoutComponent } from './layout/layout.component';
 
 const routes: Routes = [
   {
     path: '',
     component: LandingPageComponent,
     canActivate: [AuthGuard],
-    canDeactivate: [AuthGuard]
+    canDeactivate: [AuthGuard],
   },
   {
     path: 'login',
     component: LoginComponent,
     canActivate: [AuthGuard],
-    canDeactivate: [AuthGuard]
+    canDeactivate: [AuthGuard],
   },
   {
     path: 'signup',
     component: SignupComponent,
     canActivate: [AuthGuard],
-    canDeactivate: [AuthGuard]
+    canDeactivate: [AuthGuard],
   },
   { path: 'mainpage', component: MainpageComponent, canActivate: [AuthGuard] },
   { path: 'payment', component: PaymentComponent, canActivate: [AuthGuard] },
   { path: 'menu', component: MenuComponent, canActivate: [AuthGuard] },
   { path: 'menu-page', component: MenuPageComponent, canActivate: [AuthGuard] },
-  { path: 'menu-page2', component: MenuPage2Component, canActivate: [AuthGuard] },
+  {
+    path: 'menu-page2',
+    component: MenuPage2Component,
+    canActivate: [AuthGuard],
+  },
   { path: 'cart', component: CartComponent, canActivate: [AuthGuard] },
+  { path: 'layout', component: LayoutComponent, canActivate: [AuthGuard] },
   { path: 'qr', component: QrScannerComponent, canActivate: [AuthGuard] },
   { path: '**', component: NotFoundPageComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

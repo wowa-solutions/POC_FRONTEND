@@ -19,9 +19,8 @@ import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { BrowserAnimationsModule }  
-    from "@angular/platform-browser/animations"; 
-import { DataViewModule } from "primeng/dataview";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DataViewModule } from 'primeng/dataview';
 import { CartComponent } from './cart/cart.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { SignupComponent } from './signup/signup.component';
@@ -39,7 +38,8 @@ import { UserModalComponent } from './user-modal/user-modal.component';
 import { ToastrModule } from 'ngx-toastr';
 import { CartService } from '../services/cart.service';
 import { ProductService } from '../services/product.service';
-ToastrModule.forRoot() // ToastrModule importiert
+import { LayoutComponent } from './layout/layout.component';
+ToastrModule.forRoot(); // ToastrModule importiert
 
 @NgModule({
   declarations: [
@@ -68,7 +68,8 @@ ToastrModule.forRoot() // ToastrModule importiert
     PizzaItemModalComponent,
     MenuPageComponent,
     MenuPage2Component,
-    UserModalComponent
+    UserModalComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,11 +86,10 @@ ToastrModule.forRoot() // ToastrModule importiert
     HttpClientModule,
     ButtonModule,
     InputTextModule,
-    DataViewModule,  
+    DataViewModule,
     TableModule,
-
   ],
   providers: [CartService, ProductService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

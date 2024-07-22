@@ -1,24 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/services/login.service';
 
-
 @Component({
   selector: 'app-user-modal',
   templateUrl: './user-modal.component.html',
-  styleUrls: ['./user-modal.component.css']
+  styleUrls: ['./user-modal.component.css'],
 })
 export class UserModalComponent implements OnInit {
-
   showModal: boolean = false;
-  constructor(private loginService: LoginService) {
-  }
+  constructor(private loginService: LoginService) {}
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   openModal() {
-    console.log("clicked user modal");
+    console.log('clicked user modal');
     this.showModal = true;
   }
 
@@ -26,7 +21,7 @@ export class UserModalComponent implements OnInit {
     this.showModal = false;
   }
 
-  logoutProcess(){
+  logoutProcess() {
     this.loginService.logoutProcess();
   }
 }

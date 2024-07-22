@@ -3,8 +3,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-ordering',
   templateUrl: './ordering.component.html',
-  styleUrls: ['./ordering.component.css']
+  styleUrls: ['./ordering.component.css'],
 })
-export class OrderingComponent {
-
-}
+export class OrderingComponent {}

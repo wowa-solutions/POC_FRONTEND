@@ -1,0 +1,192 @@
+body{
+    background-color: #fcf2f2 !important;
+    margin: 0;
+    padding: 0;
+}
+
+.outer-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 10px;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.banner {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.5em;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+    background-color: #0d1f2d;
+}
+
+.video-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.video-item {
+    background-color: #ccc;
+    flex: 1 1 calc(25% - 10px); /* Anpassung für vier Videos pro Reihe mit 10px Abstand */
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 1.2em;
+    position: relative;
+    overflow: hidden;
+    min-height: 200px; /* Mindesthöhe für die Videos */
+    aspect-ratio: 9 / 16; /* Stellt sicher, dass das Video höher als breit ist */
+    max-width: calc(25% - 10px); /* Maximalbreite für die Videos */
+}
+
+.orderButton {
+    margin-top: 20px;
+    text-align: center;
+    font-size: x-large;
+    background-color: #0d1f2d !important; /* Dunkle Hintergrundfarbe */
+    color: #fff !important; /* Helle Textfarbe */
+    border: 2px solid #fff; /* Weiße Umrandung */
+    border-radius: 30px; /* Abgerundete Ecken */
+    padding: 15px 30px; /* Innenabstände für den Button */
+    font-weight: bold; /* Fettschrift */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Schatten für 3D-Effekt */
+    transition: background-color 0.3s, transform 0.3s; /* Übergangseffekte für Hover */
+}
+
+.orderButton:hover {
+    border: 2px solid #4da74a; /* Weiße Umrandung */
+    transform: translateY(-3px); /* Leichte Bewegung nach oben beim Hover */
+}
+
+.orderButton:focus {
+    outline: none; /* Entfernt den Standardfokusrahmen */
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer; /* Zeigt den nativen Cursor auf dem Video an */
+}
+
+.custom-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: pink;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1; /* Stellt sicher, dass der Button über dem Video ist */
+}
+
+.custom-play-button::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 15px solid white;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    margin-left: 5px;
+}
+
+video.playing + .custom-play-button {
+    display: none;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    color: black;
+    padding: 20px;
+    gap: 20px;
+    height: 350px;
+}
+
+.faq-image {
+    flex: 1;
+    max-width: 50%;
+    min-width: 50%;
+    background-color: #814545;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 300px;
+}
+
+.faq-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: black solid 0.5px;
+}
+
+.faq-section {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.faq-item {
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.faq-question {
+    font-size: 0.8em;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.arrow-icon {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.arrow-icon.rotated {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    margin-top: 10px;
+    font-size: 0.7em;
+}

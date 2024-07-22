@@ -3,21 +3,23 @@ import { BehaviorSubject, Subject } from 'rxjs';
 import { Dishes } from 'src/models/models';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CartService {
-  private cartItemsSubject: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
+  private cartItemsSubject: BehaviorSubject<any[]> = new BehaviorSubject<any[]>(
+    [],
+  );
   cartItems$ = this.cartItemsSubject.asObservable();
 
-  constructor() { }
+  constructor() {}
 
   addToCart(item: Dishes) {
     const currentItems = this.cartItemsSubject.value;
 
     const existingItemIndex = currentItems.findIndex(
-      existingItem => existingItem.title === item.title
+      (existingItem) => existingItem.title === item.title,
     );
-  
+
     if (existingItemIndex !== -1) {
       const updatedItems = [...currentItems];
       updatedItems[existingItemIndex].quantity++;
@@ -29,18 +31,20 @@ export class CartService {
   }
 
   removeFromCart(item: Dishes) {
-    const currentItems = this.cartItemsSubject.value;  
-    const itemIndexToRemove = currentItems.findIndex(cartItem => cartItem.id === item.id);
-  
+    const currentItems = this.cartItemsSubject.value;
+    const itemIndexToRemove = currentItems.findIndex(
+      (cartItem) => cartItem.id === item.id,
+    );
 
     // hier Platzhalter mit Modal logik ersetzen, bei der "ok" oder "abbrechen" ausgewählt wird
     // if(3/1 == 0){
-      if (itemIndexToRemove !== -1) {
-        const updatedItems = currentItems.filter((_, index) => index !== itemIndexToRemove);
-        this.cartItemsSubject.next(updatedItems);
-      }
+    if (itemIndexToRemove !== -1) {
+      const updatedItems = currentItems.filter(
+        (_, index) => index !== itemIndexToRemove,
+      );
+      this.cartItemsSubject.next(updatedItems);
+    }
     // }
-
   }
 
   private addItemSubject = new Subject<void>();

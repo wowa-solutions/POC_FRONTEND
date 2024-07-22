@@ -8,7 +8,7 @@ describe('BurgerItemModalComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [BurgerItemModalComponent]
+      declarations: [BurgerItemModalComponent],
     });
     fixture = TestBed.createComponent(BurgerItemModalComponent);
     component = fixture.componentInstance;

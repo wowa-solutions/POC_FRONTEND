@@ -4,11 +4,8 @@ import { BurgerItemModalComponent } from './burger-item-modal/burger-item-modal.
 @Component({
   selector: 'app-item-modals',
   templateUrl: './item-modals.component.html',
-  styleUrls: ['./item-modals.component.css']
+  styleUrls: ['./item-modals.component.css'],
 })
 export class ItemModalsComponent {
-
-  constructor(){
-
-  };
+  constructor() {}
 }
