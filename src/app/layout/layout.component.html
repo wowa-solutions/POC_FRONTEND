@@ -1,60 +1,164 @@
-<div class="outer-container">
-    <div class="container">
-      <div class="banner">
-        <h1>Welcome to Burning Wolf</h1>
-      </div>
-      <div class="content">
-        <div class="video-grid">
-          <div class="video-item">
-            <div class="video-wrapper">
-              <video src="https://videos.pexels.com/video-files/8566775/8566775-uhd_2160_3840_30fps.mp4"></video>
-              <div class="custom-play-button"></div>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Untitled</title>
+  </head>
+
+  <body>
+    <div class="outer-container">
+      <div class="container">
+        <div class="banner">
+          <h1>Welcome to Burning Wolf</h1>
+        </div>
+        <div class="content">
+          <h1>Sieh die Vapes in Action</h1>
+          <div class="video-grid">
+            <div class="video-item">
+              <div class="video-wrapper">
+                <video
+                  src="https://videos.pexels.com/video-files/8566775/8566775-uhd_2160_3840_30fps.mp4"
+                ></video>
+                <div class="custom-play-button"></div>
+              </div>
+            </div>
+            <div class="video-item">
+              <div class="video-wrapper">
+                <video
+                  src="https://videos.pexels.com/video-files/5377697/5377697-uhd_2160_3840_25fps.mp4"
+                ></video>
+                <div class="custom-play-button"></div>
+              </div>
+            </div>
+            <div class="video-item">
+              <div class="video-wrapper">
+                <video
+                  src="https://videos.pexels.com/video-files/8566775/8566775-uhd_2160_3840_30fps.mp4"
+                ></video>
+                <div class="custom-play-button"></div>
+              </div>
+            </div>
+            <div class="video-item">
+              <div class="video-wrapper">
+                <video
+                  src="https://videos.pexels.com/video-files/5377697/5377697-uhd_2160_3840_25fps.mp4"
+                ></video>
+                <div class="custom-play-button"></div>
+              </div>
             </div>
           </div>
-          <div class="video-item">
-            <div class="video-wrapper">
-              <video src="https://videos.pexels.com/video-files/5377697/5377697-uhd_2160_3840_25fps.mp4"></video>
-              <div class="custom-play-button"></div>
-            </div>
+          <div class="orderButton">
+            <p-button label="Jetzt bestellen"></p-button>
           </div>
-          <div class="video-item">
-            <div class="video-wrapper">
-              <video src="https://videos.pexels.com/video-files/8566775/8566775-uhd_2160_3840_30fps.mp4"></video>
-              <div class="custom-play-button"></div>
-            </div>
+        </div>
+        <div class="banner">
+          <h1>Another Sector</h1>
+        </div>
+
+        <div class="faq-container">
+          <div class="faq-header">
+            <h2>Häufig Gestellte Fragen</h2>
           </div>
-          <div class="video-item">
-            <div class="video-wrapper">
-              <video src="https://videos.pexels.com/video-files/5377697/5377697-uhd_2160_3840_25fps.mp4"></video>
-              <div class="custom-play-button"></div>
+          <div class="faq-content">
+            <div class="faq-image">
+              <img
+                src="https://cdn.book-family.de/fitbook/data/uploads/2023/05/gettyimages-1487479766.jpg"
+                alt="FAQ Image"
+              />
+            </div>
+            <div class="faq-section">
+              <div
+                *ngFor="let faq of faqs"
+                class="faq-item"
+                [class.open]="faq.open"
+              >
+                <div class="faq-question" (click)="toggleFaq(faq, $event)">
+                  {{ faq.question }}
+                  <i
+                    class="arrow-icon fas fa-chevron-down"
+                    [class.rotated]="faq.open"
+                  ></i>
+                </div>
+                <div class="faq-answer">
+                  {{ faq.answer }}
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <p-button class="orderButton" label="Jetzt bestellen"></p-button>      
-      </div>
-      <div class="banner">
-        <h1>Newest Products</h1>
-      </div>
-  
-      <div class="faq-container">
-        <div class="faq-image">
-          <img src="https://e-vape.shop/media/image/product/32146/md/vaporesso-luxe-xr-pod-kit-40w.png" alt="FAQ Image">
+
+        <div class="banner">
+          <h1>Another Sector</h1>
         </div>
-        <div class="faq-section">
-          <h2>Häufig Gestellte Fragen</h2>
-          <div *ngFor="let faq of faqs" class="faq-item">
-            <div class="faq-question">
-              {{ faq.question }}
-              <i class="arrow-icon fas fa-chevron-down" [class.rotated]="faq.open" (click)="toggleFaq(faq, $event)"></i>
+
+        <footer class="site-footer">
+          <div class="footer-top">
+            <div class="footer-top-content">
+              <div class="footer-top-text">
+                <h2>Nichts mehr verpassen und <span>10% sparen</span></h2>
+                <p>
+                  Abonniere unseren Newsletter und erhalte 10% auf deine erste
+                  Bestellung!
+                </p>
+              </div>
+              <div class="footer-top-logo">
+                <img src="../../assets/walking-leaf.svg" alt="Logo" />
+              </div>
             </div>
-            <div class="faq-answer" *ngIf="faq.open">{{ faq.answer }}</div>
           </div>
-        </div>
-      </div>
-  
-      <div class="banner">
-        <h1>Newest Products</h1>
+          <div class="footer-content">
+            <div class="footer-column column-25">
+              <h3>Menu</h3>
+              <ul>
+                <li><a href="#">Startseite</a></li>
+                <li><a href="#">THC Spacejellies</a></li>
+                <li><a href="#">Wissen</a></li>
+                <li><a href="#">Kontakt</a></li>
+              </ul>
+            </div>
+            <div class="footer-column column-35">
+              <h3>Rechtliche Hinweise</h3>
+              <ul>
+                <li><a href="#">Impressum</a></li>
+                <li><a href="#">Allgemeine Geschäftsbedingungen</a></li>
+                <li><a href="#">Widerrufsbelehrung</a></li>
+                <li><a href="#">Datenschutzerklärung</a></li>
+                <li>
+                  <a href="#"
+                    >Hinweise zum Elektronikgerätegesetz und zur
+                    Batterieentsorgung</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="footer-column column-30">
+              <h3>Wir akzeptieren</h3>
+              <ul class="payment-methods">
+                <li>
+                  <img
+                    src="../../assets/Mastercard-logo.svg.png"
+                    alt="MasterCard"
+                  />
+                </li>
+                <li><img src="../../assets/paypal.png" alt="PayPal" /></li>
+                <li><img src="../../assets/klarna.svg" alt="Klarna" /></li>
+              </ul>
+              <h3>Folge uns auf</h3>
+              <ul class="social-media">
+                <li>
+                  <a href="#"
+                    ><img src="../../assets/instagram.png" alt="Instagram"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- <div class="footer-bottom">
+                    <img src="../../assets/DALLE_2024-03-26_15.53.13_-_Ein_lebhaftes_und_farbenfrohes_Firmenlogo_im_Comic-Stil_das_einen_Wolfskopf_zeigt._Der_Wolf_tragt_eine_coole_Sonnenbrille_und_hat_lassig_eine_Zigaret.webp" alt="Wowa Solutions GmbH 2024">
+                    </div> -->
+        </footer>
       </div>
     </div>
-  </div>
-  
+  </body>
+</html>

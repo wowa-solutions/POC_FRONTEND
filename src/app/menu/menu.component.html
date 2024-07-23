@@ -1,124 +1,203 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Hugo 0.122.0" />
+    <title>Ordering Menu</title>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-  <meta name="generator" content="Hugo 0.122.0">
-  <title>Ordering Menu</title>
-</head>
+  <body>
+    <main>
+      <div class="row">
+        <!-- Sidebar Column -->
+        <div class="col-md-3 d-none d-lg-block">
+          <div class="sidebar">
+            <h4>Filteroptionen</h4>
+            <!-- Filter Search Box -->
+            <input
+              type="text"
+              class="form-control mb-3"
+              placeholder="Suchbegriff eingeben..."
+            />
+            <!-- Add more filters here -->
+            <!-- Topic 1 -->
+            <h5>Speisenart</h5>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="option1-1"
+                id="topic1Option1"
+              />
+              <label class="form-check-label" for="topic1Option1">
+                Vorspeise
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="option1-2"
+                id="topic1Option2"
+              />
+              <label class="form-check-label" for="topic1Option2">
+                Hauptspeise
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="option1-3"
+                id="topic1Option3"
+              />
+              <label class="form-check-label" for="topic1Option3">
+                Nachspeise
+              </label>
+            </div>
 
-<body>
-  <main>
-    <div class="row">
-      <!-- Sidebar Column -->
-      <div class="col-md-3 d-none d-lg-block">
-        <div class="sidebar">
-          <h4>Filteroptionen</h4>
-          <!-- Filter Search Box -->
-          <input type="text" class="form-control mb-3" placeholder="Suchbegriff eingeben...">
-          <!-- Add more filters here -->
-          <!-- Topic 1 -->
-          <h5>Speisenart</h5>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="option1-1" id="topic1Option1">
-            <label class="form-check-label" for="topic1Option1">
-              Vorspeise
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="option1-2" id="topic1Option2">
-            <label class="form-check-label" for="topic1Option2">
-              Hauptspeise
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="option1-3" id="topic1Option3">
-            <label class="form-check-label" for="topic1Option3">
-              Nachspeise
-            </label>
-          </div>
+            <!-- Topic 2 -->
+            <h5>Zutaten</h5>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="option2-1"
+                id="topic2Option1"
+              />
+              <label class="form-check-label" for="topic2Option1">
+                Tomaten
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="option2-2"
+                id="topic2Option2"
+              />
+              <label class="form-check-label" for="topic2Option2">
+                Hackfleisch
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="option2-3"
+                id="topic2Option3"
+              />
+              <label class="form-check-label" for="topic2Option3"> Käse </label>
+            </div>
 
-          <!-- Topic 2 -->
-          <h5>Zutaten</h5>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="option2-1" id="topic2Option1">
-            <label class="form-check-label" for="topic2Option1">
-              Tomaten
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="option2-2" id="topic2Option2">
-            <label class="form-check-label" for="topic2Option2">
-              Hackfleisch
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="option2-3" id="topic2Option3">
-            <label class="form-check-label" for="topic2Option3">
-              Käse
-            </label>
-          </div>
-
-          <!-- Topic 3 -->
-          <h5>Preis</h5>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="option3-1" id="topic3Option1">
-            <label class="form-check-label" for="topic3Option1">
-              bis 10 €
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="option3-2" id="topic3Option2">
-            <label class="form-check-label" for="topic3Option2">
-              bis 20 €
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="option3-3" id="topic3Option3">
-            <label class="form-check-label" for="topic3Option3">
-              bis 50 €
-            </label>
+            <!-- Topic 3 -->
+            <h5>Preis</h5>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="option3-1"
+                id="topic3Option1"
+              />
+              <label class="form-check-label" for="topic3Option1">
+                bis 10 €
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="option3-2"
+                id="topic3Option2"
+              />
+              <label class="form-check-label" for="topic3Option2">
+                bis 20 €
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="option3-3"
+                id="topic3Option3"
+              />
+              <label class="form-check-label" for="topic3Option3">
+                bis 50 €
+              </label>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="col-md-9">
-        <div class="container-fluid"> <!-- oder "container" je nach gewünschter Breite -->
-          <div class="row">
-            <div class="d-flex justify-content-end">
-              <a href="/previousPage" class="btn btn-sm rounded mb-2 btn-back">
-                <i class="fas fa-arrow-left"></i>
-                <span class="button-text">Zurück</span>
-              </a>
-            </div>            
+        <div class="col-md-9">
+          <div class="container-fluid">
+            <!-- oder "container" je nach gewünschter Breite -->
+            <div class="row">
+              <div class="d-flex justify-content-end">
+                <a
+                  href="/previousPage"
+                  class="btn btn-sm rounded mb-2 btn-back"
+                >
+                  <i class="fas fa-arrow-left"></i>
+                  <span class="button-text">Zurück</span>
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="album py-5 bg-body-tertiary">
-          <div class="container">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3">
-              <div *ngFor="let item of items">
-                <div class="col">
-                  <div class="card shadow-sm">
-                    <img class="bd-placeholder-img card-img-top" width="100%" height="225"
-                      src={{item.link}}>
-                    <div class="card-body">
-                      <p class="card-text">{{item.description}}</p>
-                      <p class ="card-price" style="margin-left:10px;color: red;">{{item.price}} €</p>
-                      <div class="d-flex justify-content-center align-items-center">
-                        <div class="btn-group d-flex flex-wrap justify-content-center">
-                          <button  type="button" class="btn btn-sm rounded mb-2 btn-custom">
-                            <i class="fa-solid fa-plus"></i>
-                            <!-- ToDo: click Event muss nach oben verschoben werden, verursacht aber geilen Bug -->
-                            <span class="button-text" (click)="menuItem.openItemView(item)">Hinzufügen</span>
-                            <app-menu-item #menuItem></app-menu-item>
-                          </button>
-                          <button type="button" class="btn btn-sm rounded mb-2 btn-custom">
-                            <i class="fa-solid fa-bookmark"></i>
-                            <span class="button-text">Merken</span>
-                          </button>
+          <div class="album py-5 bg-body-tertiary">
+            <div class="container">
+              <div
+                class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3"
+              >
+                <div *ngFor="let item of items">
+                  <div class="col">
+                    <div class="card shadow-sm">
+                      <img
+                        class="bd-placeholder-img card-img-top"
+                        width="100%"
+                        height="225"
+                        src="{{ item.link }}"
+                      />
+                      <div class="card-body">
+                        <p class="card-text">{{ item.description }}</p>
+                        <p
+                          class="card-price"
+                          style="margin-left: 10px; color: red"
+                        >
+                          {{ item.price }} €
+                        </p>
+                        <div
+                          class="d-flex justify-content-center align-items-center"
+                        >
+                          <div
+                            class="btn-group d-flex flex-wrap justify-content-center"
+                          >
+                            <button
+                              type="button"
+                              class="btn btn-sm rounded mb-2 btn-custom"
+                            >
+                              <i class="fa-solid fa-plus"></i>
+                              <!-- ToDo: click Event muss nach oben verschoben werden, verursacht aber geilen Bug -->
+                              <span
+                                class="button-text"
+                                (click)="menuItem.openItemView(item)"
+                                >Hinzufügen</span
+                              >
+                              <app-menu-item #menuItem></app-menu-item>
+                            </button>
+                            <button
+                              type="button"
+                              class="btn btn-sm rounded mb-2 btn-custom"
+                            >
+                              <i class="fa-solid fa-bookmark"></i>
+                              <span class="button-text">Merken</span>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -129,14 +208,13 @@
           </div>
         </div>
       </div>
-    </div>
-
-  </main>
-</body>
-<footer class="container">
-  <p class="float-end"><a href="/menu">Back to top</a></p>
-  <p>&copy; 2024 Wowa Eats, Wowa Solutions. &middot; <a href="#">Impressum</a> &middot; <a href="#">AGB´s</a></p>
-</footer>
-
-
+    </main>
+  </body>
+  <footer class="container">
+    <p class="float-end"><a href="/menu">Back to top</a></p>
+    <p>
+      &copy; 2024 Wowa Eats, Wowa Solutions. &middot;
+      <a href="#">Impressum</a> &middot; <a href="#">AGB´s</a>
+    </p>
+  </footer>
 </html>

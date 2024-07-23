@@ -1,29 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Willkommen zurück</title>
-    <style>
-
-    </style>
-</head>
-<body>
-
-<form [formGroup]="loginForm">
-    <div class="login-container">
-    <input type="email" [formControl]="loginForm.controls.Email" placeholder="E-Mail-Adresse">
-    <input type="password" [formControl]="loginForm.controls.Password" placeholder="Password">
-    <button class="loginFormButton" type="submit" value="Weiter" (click)="loginProcess()">Login</button>
-    <div class="footer">Sie haben noch kein Konto? <a href="/signup">Registrieren</a></div>
-    <div class="alternative"></div>
-    <div class="social-login">
-        <button><img src="../../assets/Google.png" alt="Google"><br>Mit Google fortfahren</button>
-        <button><img src="../../assets/Microsoft.svg" alt="Microsoft"><br>Mit Microsoft-Konto fortfahren</button>
-        <button><img src="../../assets/Apple.svg" alt="Apple"><br>Mit Apple fortfahren</button>
-    </div>
-</div>
-</form>
-
-</body>
+    <style></style>
+  </head>
+  <body>
+    <form [formGroup]="loginForm">
+      <div class="login-container">
+        <input
+          type="email"
+          [formControl]="loginForm.controls.Email"
+          placeholder="E-Mail-Adresse"
+        />
+        <input
+          type="password"
+          [formControl]="loginForm.controls.Password"
+          placeholder="Password"
+        />
+        <button
+          class="loginFormButton"
+          type="submit"
+          value="Weiter"
+          (click)="loginProcess()"
+        >
+          Login
+        </button>
+        <div class="footer">
+          Sie haben noch kein Konto? <a href="/signup">Registrieren</a>
+        </div>
+        <div class="alternative"></div>
+        <div class="social-login">
+          <button>
+            <img src="../../assets/Google.png" alt="Google" /><br />Mit Google
+            fortfahren
+          </button>
+          <button>
+            <img src="../../assets/Microsoft.svg" alt="Microsoft" /><br />Mit
+            Microsoft-Konto fortfahren
+          </button>
+          <button>
+            <img src="../../assets/Apple.svg" alt="Apple" /><br />Mit Apple
+            fortfahren
+          </button>
+        </div>
+      </div>
+    </form>
+  </body>
 </html>

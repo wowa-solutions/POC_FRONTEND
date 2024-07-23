@@ -1,0 +1,65 @@
+<nav>
+  <div></div>
+  <!-- Platz für das Firmenlogo -->
+  <a href="#">Startseite</a>
+  <a href="#">HHC Vapes</a>
+  <a href="#">THCp Vapes</a>
+  <a href="#">THC Vapes</a>
+  <a href="#">HHC Spacejellies</a>
+  <a href="#">Wissen</a>
+  <a href="#">Kontakt</a>
+  <div>
+    <!-- Platz für Benutzer und Warenkorb Symbole -->
+    <a href="javascript:void(0)" (click)="toggleCart($event)"
+      ><i class="fas fa-shopping-cart"></i
+    ></a>
+    <a href="javascript:void(0)" (click)="toggleUserMenu($event)"
+      ><i class="fas fa-user"></i
+    ></a>
+  </div>
+  <div class="menu-icon" (click)="toggleMenu()">&#9776;</div>
+</nav>
+<div class="menu" [ngClass]="{ 'menu-open': isMenuOpen }">
+  <div class="menu-card" *ngFor="let item of menuItems">
+    <a href="#">{{ item }}</a>
+  </div>
+</div>
+
+<div class="cart" [ngClass]="{ 'cart-open': isCartOpen }">
+  <div class="cart-header">
+    <h2>Dein Warenkorb ({{ cartItems.length }})</h2>
+    <button class="close-cart" (click)="toggleCart($event)">X</button>
+  </div>
+  <div class="cart-content">
+    <div *ngFor="let item of cartItems" class="cart-item">
+      <img [src]="item.image" alt="{{ item.name }}" />
+      <div class="cart-item-info">
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.price | currency: "EUR" : "symbol" }}</p>
+        <div class="cart-item-controls">
+          <button (click)="removeFromCart(item)">-</button>
+          <span>{{ item.quantity }}</span>
+          <button (click)="addToCart(item.name, item.price)">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cart-footer">
+    <h3>Summe: {{ getTotal() | currency: "EUR" : "symbol" }}</h3>
+    <button class="checkout-button">Jetzt sicher zur Kasse</button>
+  </div>
+</div>
+
+<div class="user-menu" [ngClass]="{ 'user-menu-open': isUserMenuOpen }">
+  <div class="user-menu-header">
+    <h2>Benutzer</h2>
+    <button class="close-user-menu" (click)="toggleUserMenu($event)">X</button>
+  </div>
+  <div class="user-menu-content">
+    <a href="#">Profil</a>
+    <a href="#">Einstellungen</a>
+  </div>
+  <div class="user-menu-footer">
+    <button class="logout-button">Logout</button>
+  </div>
+</div>

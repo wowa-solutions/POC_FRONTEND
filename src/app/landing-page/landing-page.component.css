@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
   height: 100%;
   margin: 0;
   font-family: Arial, sans-serif;
@@ -10,25 +11,24 @@ body, html {
 .container {
   display: flex;
   /* Stellt sicher, dass der Container die volle Bildschirmhöhe einnimmt */
-  min-height: 100vh; 
-    /* Stellt sicher, dass der Container die volle Bildschirmbreite einnimmt */
-  min-width: 100vw; 
+  min-height: 100vh;
+  /* Stellt sicher, dass der Container die volle Bildschirmbreite einnimmt */
+  min-width: 100vw;
 }
 
-.left-side, .right-side {
-    box-sizing: border-box; /* Füge box-sizing hinzu, um Padding und Border in die Breite einzubeziehen */
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    /* min-width: 50%; */ /* Falls du min-width entfernt hast, wird das hier nicht benötigt */
+.left-side,
+.right-side {
+  box-sizing: border-box; /* Füge box-sizing hinzu, um Padding und Border in die Breite einzubeziehen */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* min-width: 50%; */ /* Falls du min-width entfernt hast, wird das hier nicht benötigt */
 }
-
 
 .right-side {
   background-color: #00000076;
-  ;
 }
 
 .title {

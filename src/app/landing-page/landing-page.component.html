@@ -1,27 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wowa Startseite</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="container">
-        <div class="left-side">
-            <div class="title">Wowa-Eats</div>
-            <div class="subtitle" [class.animate]="animateSubtitle">{{ currentSubtitle }}</div>        </div>
-    
-        <div class="right-side">
-            <div class="get-started">
-                <div class="subtitle2">Get started</div>
-                <div class="login-buttons">
-                    <a href="/login">Log in</a>
-                    <a href="/signup">Sign up</a>
-                </div>
-            </div>
+      <div class="left-side">
+        <div class="title">Wowa-Eats</div>
+        <div class="subtitle" [class.animate]="animateSubtitle">
+          {{ currentSubtitle }}
         </div>
+      </div>
+
+      <div class="right-side">
+        <div class="get-started">
+          <div class="subtitle2">Get started</div>
+          <div class="login-buttons">
+            <a href="/login">Log in</a>
+            <a href="/signup">Sign up</a>
+          </div>
+        </div>
+      </div>
     </div>
-    
-    </body>
-    </html>
+  </body>
+</html>

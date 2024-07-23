@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MenuPage2Component } from './menu-page2.component';
+import { NavbarComponent } from './navbar.component';
 
-describe('MenuPage2Component', () => {
-  let component: MenuPage2Component;
-  let fixture: ComponentFixture<MenuPage2Component>;
+describe('NavbarComponent', () => {
+  let component: NavbarComponent;
+  let fixture: ComponentFixture<NavbarComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [MenuPage2Component],
+      declarations: [NavbarComponent],
     });
-    fixture = TestBed.createComponent(MenuPage2Component);
+    fixture = TestBed.createComponent(NavbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

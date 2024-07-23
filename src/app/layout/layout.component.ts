@@ -7,17 +7,34 @@ import { Component, AfterViewInit } from '@angular/core';
 })
 export class LayoutComponent implements AfterViewInit {
   faqs = [
-    { question: 'Was ist HHC?', answer: 'HHC ist ...', open: false },
-    { question: 'Ist HHC natürlich?', answer: 'HHC wird ...', open: false },
-    { question: 'Ist HHC legal?', answer: 'In den meisten ...', open: false },
     {
-      question: 'Wie ist die Wirkung von HHC?',
-      answer: 'Die Wirkung von HHC ...',
+      question: 'Was ist HHC?',
+      answer:
+        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
       open: false,
     },
     {
-      question: 'Warum soll ich die HHC Produkte im Leafz HHC Shop kaufen?',
-      answer: 'Unsere Produkte ...',
+      question: 'Ist HHC natürlich?',
+      answer:
+        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+      open: false,
+    },
+    {
+      question: 'Ist HHC legal?',
+      answer:
+        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+      open: false,
+    },
+    {
+      question: 'Wie ist die Wirkung von HHC?',
+      answer:
+        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+      open: false,
+    },
+    {
+      question: 'Warum soll ich die HHC Produkte hier kaufen?',
+      answer:
+        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
       open: false,
     },
   ];

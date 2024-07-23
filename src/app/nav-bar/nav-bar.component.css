@@ -1,82 +1,81 @@
 /* Grundlegende Navbar-Stile */
 .navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    height:80px;
-  }
-  
-  /* Hamburger-Icon-Stile */
-  .menu-icon {
-    font-size: 30px;
-    cursor: pointer;
-    color: white;
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 11;
-  }
-  
-  /* Menü-Kacheln-Stile */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 80px;
+}
+
+/* Hamburger-Icon-Stile */
+.menu-icon {
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 11;
+}
+
+/* Menü-Kacheln-Stile */
+.menu-kacheln {
+  display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #fcf2f2;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 100px); /* Höhe des Menüs */
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.menu-card {
+  background-color: white;
+  color: #2a3050;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 20px;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-card a {
+  text-decoration: none;
+  color: #2a3050;
+  font-size: 16px;
+  text-align: center;
+  display: block;
+}
+
+/* Zeige Menü-Kacheln beim Klicken auf das Hamburger-Menü */
+.menu-kacheln.show {
+  display: flex;
+}
+
+/* Verstecke Icons und Menü bei geöffnetem Hamburger-Menü */
+.navbar-icons.d-none {
+  display: none;
+}
+
+.navbar-nav.d-none {
+  display: none;
+}
+
+/* Anpassungen für große Bildschirme */
+@media (max-width: 768px) {
   .menu-kacheln {
-    display: none;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: #fcf2f2;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 100px); /* Höhe des Menüs */
-    border-radius: 0 0 10px 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 10;
-    padding: 10px;
-    box-sizing: border-box;
+    display: none; /* Kacheln nur auf mobilen Geräten anzeigen */
   }
-  
-  .menu-card {
-    background-color: white;
-    color: #2a3050;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    margin: 10px;
-    padding: 20px;
-    width: 150px;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .menu-card a {
-    text-decoration: none;
-    color: #2a3050;
-    font-size: 16px;
-    text-align: center;
-    display: block;
-  }
-  
-  /* Zeige Menü-Kacheln beim Klicken auf das Hamburger-Menü */
-  .menu-kacheln.show {
-    display: flex;
-  }
-  
-  /* Verstecke Icons und Menü bei geöffnetem Hamburger-Menü */
-  .navbar-icons.d-none {
-    display: none;
-  }
-  
-  .navbar-nav.d-none {
-    display: none;
-  }
-  
-  /* Anpassungen für große Bildschirme */
-  @media (max-width: 768px) {
-    .menu-kacheln {
-      display: none; /* Kacheln nur auf mobilen Geräten anzeigen */
-    }
-  }
-  
+}

@@ -1,192 +1,380 @@
-body{
-    background-color: #fcf2f2 !important;
-    margin: 0;
-    padding: 0;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #fcf2f2 !important;
+  background-image: url("https://leafz.de/cdn/shop/t/25/assets/footer-bg-DwN0yXIZ.png");
+  background-size: cover;
+  object-fit: contain;
 }
 
 .outer-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 0 10px;
-    box-sizing: border-box;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 10px;
+  box-sizing: border-box;
+  min-height: 100vh; /* Ensures the outer container takes at least the full viewport height */
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 1200px;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .banner {
-    background-color: #007bff;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 1.5em;
+  background-color: #467f99;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.5em;
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding: 20px;
-    background-color: #0d1f2d;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px;
+  background-color: #0d1f2d;
+  background-image: url("https://leafz.de/cdn/shop/t/25/assets/footer-bg-DwN0yXIZ.png");
+  background-size: cover;
+  object-fit: contain;
+}
+
+.content h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 50px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bolder;
 }
 
 .video-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
 }
 
 .video-item {
-    background-color: #ccc;
-    flex: 1 1 calc(25% - 10px); /* Anpassung für vier Videos pro Reihe mit 10px Abstand */
-    box-sizing: border-box;
-    text-align: center;
-    font-size: 1.2em;
-    position: relative;
-    overflow: hidden;
-    min-height: 200px; /* Mindesthöhe für die Videos */
-    aspect-ratio: 9 / 16; /* Stellt sicher, dass das Video höher als breit ist */
-    max-width: calc(25% - 10px); /* Maximalbreite für die Videos */
+  background-color: #ccc;
+  flex: 1 1 calc(25% - 10px); /* Anpassung für vier Videos pro Reihe mit 10px Abstand */
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 1.2em;
+  position: relative;
+  overflow: hidden;
+  min-height: 200px; /* Mindesthöhe für die Videos */
+  aspect-ratio: 9 / 16; /* Stellt sicher, dass das Video höher als breit ist */
+  max-width: calc(25% - 10px); /* Maximalbreite für die Videos */
 }
 
 .orderButton {
-    margin-top: 20px;
-    text-align: center;
-    font-size: x-large;
-    background-color: #0d1f2d !important; /* Dunkle Hintergrundfarbe */
-    color: #fff !important; /* Helle Textfarbe */
-    border: 2px solid #fff; /* Weiße Umrandung */
-    border-radius: 30px; /* Abgerundete Ecken */
-    padding: 15px 30px; /* Innenabstände für den Button */
-    font-weight: bold; /* Fettschrift */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Schatten für 3D-Effekt */
-    transition: background-color 0.3s, transform 0.3s; /* Übergangseffekte für Hover */
-}
-
-.orderButton:hover {
-    border: 2px solid #4da74a; /* Weiße Umrandung */
-    transform: translateY(-3px); /* Leichte Bewegung nach oben beim Hover */
-}
-
-.orderButton:focus {
-    outline: none; /* Entfernt den Standardfokusrahmen */
+  margin-top: 20px;
+  text-align: center;
+  color: #0d1f2d;
+  font-size: x-large;
 }
 
 .video-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    cursor: pointer; /* Zeigt den nativen Cursor auf dem Video an */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer; /* Zeigt den nativen Cursor auf dem Video an */
 }
 
 .custom-play-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60px;
-    height: 60px;
-    background-color: pink;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1; /* Stellt sicher, dass der Button über dem Video ist */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background-color: pink;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1; /* Stellt sicher, dass der Button über dem Video ist */
 }
 
 .custom-play-button::before {
-    content: '';
-    display: block;
-    width: 0;
-    height: 0;
-    border-left: 15px solid white;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    margin-left: 5px;
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 15px solid white;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  margin-left: 5px;
 }
 
 video.playing + .custom-play-button {
-    display: none;
+  display: none;
 }
 
 .faq-container {
-    display: flex;
-    flex-direction: row;
-    background-color: #fff;
-    color: black;
-    padding: 20px;
-    gap: 20px;
-    height: 350px;
+  background-image: url("https://leafz.de/cdn/shop/t/25/assets/footer-bg-DwN0yXIZ.png");
+  background-size: cover;
+  object-fit: contain;
+  display: flex;
+  flex-direction: column;
+  background-color: #0d1f2d;
+  color: black;
+  padding: 20px;
+  gap: 20px;
+  height: auto; /* Höhe automatisch anpassen */
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.faq-content {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
 
 .faq-image {
-    flex: 1;
-    max-width: 50%;
-    min-width: 50%;
-    background-color: #814545;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    height: 300px;
+  flex: 1;
+  max-width: 50%;
+  min-width: 50%;
+  background-color: #814545;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 300px;
 }
 
 .faq-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border: black solid 0.5px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* border: black solid 0.5px; */
 }
 
 .faq-section {
-    flex: 1;
-    overflow-y: auto;
+  flex: 1;
 }
 
 .faq-item {
-    background-color: #f7f7f7;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    padding: 10px;
-    cursor: pointer;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  cursor: pointer;
+  overflow: hidden; /* Verhindert das Überlaufen von Inhalten */
+  transition:
+    max-height 0.5s ease,
+    padding 0.5s ease;
+  max-height: 60px; /* Maximale Höhe im geschlossenen Zustand (ungefähr die Höhe der Frage) */
+}
+
+.faq-item.open {
+  max-height: 1000px; /* Maximale Höhe im geöffneten Zustand */
+  padding: 10px; /* Auffüllen beim Öffnen */
 }
 
 .faq-question {
-    font-size: 0.8em;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .arrow-icon {
-    cursor: pointer;
-    transition: transform 0.3s ease;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .arrow-icon.rotated {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .faq-answer {
-    margin-top: 10px;
-    font-size: 0.7em;
+  margin-top: 10px;
+  font-size: 1em;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.faq-item.open .faq-answer {
+  opacity: 1;
+}
+
+.site-footer {
+  background-color: #0d1f2d;
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+  width: 100%;
+  background-image: url("https://leafz.de/cdn/shop/t/25/assets/footer-bg-DwN0yXIZ.png");
+  background-size: cover;
+  object-fit: contain;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 0 15%; /* Add padding of 15% on the left and right */
+  box-sizing: border-box; /* Ensure padding is included in the total width */
+  min-height: 300px;
+}
+
+.footer-top-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.footer-top-text {
+  flex: 1;
+  text-align: left;
+  padding: 5px;
+}
+
+.footer-top h2 {
+  font-size: 24px;
+  margin: 0;
+  text-transform: uppercase;
+  color: white;
+}
+
+.footer-top h2 span {
+  color: #ff00ff; /* Change to the desired highlight color */
+}
+
+.footer-top h2 {
+  margin-bottom: 10px;
+  color: white;
+}
+
+.footer-top p {
+  font-size: 16px;
+}
+
+.footer-top-logo {
+  flex: 1;
+  text-align: right;
+}
+
+.footer-top-logo img {
+  min-height: 100px; /* Adjust based on your design */
+  min-width: 100%;
+  /* height: auto; */
+  object-fit: contain;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 15%; /* Add padding of 15% on the left and right */
+  box-sizing: border-box; /* Ensure padding is included in the total width */
+  gap: 30px; /* Increase the gap between the columns */
+}
+
+.footer-column {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.footer-column.column-25 {
+  flex: 0 0 25%;
+}
+
+.footer-column.column-35 {
+  flex: 0 0 35%;
+}
+
+.footer-column.column-30 {
+  flex: 0 0 30%;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+  text-decoration: underline;
+}
+
+.payment-methods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.payment-methods li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.payment-methods img {
+  width: 50px;
+  height: auto;
+}
+
+.social-media {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start; /* Align items to the left */
+}
+
+.social-media li {
+  margin-right: 10px;
+}
+
+.social-media img {
+  width: 40px;
+  height: auto;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+}
+
+.footer-bottom img {
+  width: 300px;
+  height: auto;
 }

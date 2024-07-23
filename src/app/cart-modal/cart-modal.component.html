@@ -1,46 +1,70 @@
 <!-- cart-modal.component.html -->
 <div class="modal" tabindex="-1" role="dialog" *ngIf="showModal">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Warenkorb</h5>
-          <!-- ToDo: Brauchen wir so einen schließen Button? -->
-          <!-- <i class="fa-solid fa-circle-xmark close"  (click)="closeModal()"> -->
-          <!-- </i> -->
-        </div>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Warenkorb</h5>
+        <!-- ToDo: Brauchen wir so einen schließen Button? -->
+        <!-- <i class="fa-solid fa-circle-xmark close"  (click)="closeModal()"> -->
+        <!-- </i> -->
+      </div>
+      <div class="modal-body">
+        <!-- Deine Warenkorb-Items hier -->
         <div class="modal-body">
-          <!-- Deine Warenkorb-Items hier -->
-          <div class="modal-body">
-            <div class="cart-item" style="  border-bottom: 2px;
-            " *ngFor="let item of cartItems">
-              <div class="item-info">
-                <img class="bd-placeholder-img img-custom" width="100%" height="225"
-                      src={{item.link}}>
-                <span class="item-title">{{ item.title }}</span>
-              </div>
-              <div class="item-quantity">
-                <select class="form-select" [(ngModel)]="item.quantity" (change)="updateTotal()">
-                  <option *ngFor="let num of [].constructor(30); let i = index" [value]="i+1">{{ i+1 }}</option>
-                </select>
-              </div>
-              <div class="item-price">
-                <span>{{ item.price * item.quantity }} €</span>
-              </div>
-              <div class="remove-button">
-                <button type="button" class="btn btn-danger" (click)="removeFromCartService(item)">
-                  <i class="fas fa-trash"></i>
-                </button>
-              </div>              
+          <div
+            class="cart-item"
+            style="border-bottom: 2px"
+            *ngFor="let item of cartItems"
+          >
+            <div class="item-info">
+              <img
+                class="bd-placeholder-img img-custom"
+                width="100%"
+                height="225"
+                src="{{ item.link }}"
+              />
+              <span class="item-title">{{ item.title }}</span>
             </div>
-            <div class="cart-total">
-              <span>Gesamtsumme: </span><span>{{ totalSum }} €</span>
+            <div class="item-quantity">
+              <select
+                class="form-select"
+                [(ngModel)]="item.quantity"
+                (change)="updateTotal()"
+              >
+                <option
+                  *ngFor="let num of [].constructor(30); let i = index"
+                  [value]="i + 1"
+                >
+                  {{ i + 1 }}
+                </option>
+              </select>
+            </div>
+            <div class="item-price">
+              <span>{{ item.price * item.quantity }} €</span>
+            </div>
+            <div class="remove-button">
+              <button
+                type="button"
+                class="btn btn-danger"
+                (click)="removeFromCartService(item)"
+              >
+                <i class="fas fa-trash"></i>
+              </button>
             </div>
           </div>
+          <div class="cart-total">
+            <span>Gesamtsumme: </span><span>{{ totalSum }} €</span>
+          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" (click)="closeModal()">Schließen</button>
-          <a type="button" href="/payment" class="btn btn-primary">Zur Kasse gehen</a>
-        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">
+          Schließen
+        </button>
+        <a type="button" href="/payment" class="btn btn-primary"
+          >Zur Kasse gehen</a
+        >
       </div>
     </div>
   </div>
+</div>

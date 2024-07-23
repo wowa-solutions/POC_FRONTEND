@@ -1,32 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zahlungsvorgang</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-   
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Zahlungsvorgang</h2>
 
-<div class="container">
-    <h2>Zahlungsvorgang</h2>
-
-    <form action="/submit-payment" method="post">
+      <form action="/submit-payment" method="post">
         <label for="amount">Betrag:</label>
-        <input type="text" id="amount" name="amount" placeholder="Betrag in EUR">
+        <input
+          type="text"
+          id="amount"
+          name="amount"
+          placeholder="Betrag in EUR"
+        />
 
         <label for="payment-method">Zahlungsmethode wählen:</label>
         <div class="payment-methods">
-            <label><input type="radio" name="payment-method" value="PayPal"><img src="../../assets/paypal.svg" alt="PayPal Logo"> PayPal</label>
-            <label><input type="radio" name="payment-method" value="Klarna"><img src="../../assets/klarna.svg" alt="Klarna Logo"> Klarna</label>
-            <label><input type="radio" name="payment-method" value="Girocard"><img src="../../assets/giropay.svg" alt="Girocard Logo"> Girocard</label>
-            <label><input type="radio" name="payment-method" value="CreditCard"><img src="../../assets/Mastercard.svg" alt="Kreditkarten Logo"> Kreditkarte</label>
+          <label
+            ><input type="radio" name="payment-method" value="PayPal" /><img
+              src="../../assets/paypal.svg"
+              alt="PayPal Logo"
+            />
+            PayPal</label
+          >
+          <label
+            ><input type="radio" name="payment-method" value="Klarna" /><img
+              src="../../assets/klarna.svg"
+              alt="Klarna Logo"
+            />
+            Klarna</label
+          >
+          <label
+            ><input type="radio" name="payment-method" value="Girocard" /><img
+              src="../../assets/giropay.svg"
+              alt="Girocard Logo"
+            />
+            Girocard</label
+          >
+          <label
+            ><input type="radio" name="payment-method" value="CreditCard" /><img
+              src="../../assets/Mastercard.svg"
+              alt="Kreditkarten Logo"
+            />
+            Kreditkarte</label
+          >
         </div>
 
-        <input type="submit" value="Bezahlen">
-    </form>
-</div>
-
-</body>
+        <input type="submit" value="Bezahlen" />
+      </form>
+    </div>
+  </body>
 </html>

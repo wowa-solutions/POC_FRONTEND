@@ -1,5 +1,5 @@
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   background-color: #f4f4f4;
   margin: 0;
   padding: 0;
@@ -12,7 +12,7 @@ body {
   background-color: #fff;
   padding: 40px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 400px;
   text-align: center;
 }
@@ -37,7 +37,7 @@ h2 {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   cursor: pointer;
@@ -51,7 +51,7 @@ h2 {
   position: relative;
 }
 .alternative::before {
-  content: 'ODER';
+  content: "ODER";
   position: absolute;
   top: -14px;
   left: 50%;

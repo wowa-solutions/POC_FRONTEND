@@ -33,12 +33,12 @@ import { SaladItemModalComponent } from './Item-Modals/salad-item-modal/salad-it
 import { ItemModalsComponent } from './Item-Modals/item-modals.component';
 import { PizzaItemModalComponent } from './Item-Modals/pizza-item-modal/pizza-item-modal.component';
 import { MenuPageComponent } from './menu-page/menu-page.component';
-import { MenuPage2Component } from './menu-page2/menu-page2.component';
 import { UserModalComponent } from './user-modal/user-modal.component';
 import { ToastrModule } from 'ngx-toastr';
 import { CartService } from '../services/cart.service';
 import { ProductService } from '../services/product.service';
 import { LayoutComponent } from './layout/layout.component';
+import { NavbarComponent } from './navbar/navbar.component';
 ToastrModule.forRoot(); // ToastrModule importiert
 
 @NgModule({
@@ -67,9 +67,9 @@ ToastrModule.forRoot(); // ToastrModule importiert
     ItemModalsComponent,
     PizzaItemModalComponent,
     MenuPageComponent,
-    MenuPage2Component,
     UserModalComponent,
     LayoutComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

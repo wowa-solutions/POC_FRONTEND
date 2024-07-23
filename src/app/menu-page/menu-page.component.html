@@ -1,64 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fancy HHC Vape</title>
-   ˇ
-</head>
-<body>
-    <header>
-        <nav>
-            <div></div> <!-- Platz für das Firmenlogo -->
-            <a href="#">Startseite</a>
-            <a href="#">HHC Vapes</a>
-            <a href="#">THCp Vapes</a>
-            <a href="#">THC Vapes</a>
-            <a href="#">HHC Spacejellies</a>
-            <a href="#">Wissen</a>
-            <a href="#">Kontakt</a>
-            <div> <!-- Platz für Benutzer und Warenkorb Symbole -->
-                <a href="#"><i class="fas fa-shopping-cart"></i></a>
-                <a href="#"><i class="fas fa-user"></i></a>
-            </div>
-            <div class="menu-icon" (click)="toggleMenu()">&#9776;</div>
-        </nav>
-        <div class="menu" [ngClass]="{'menu-open': isMenuOpen}">
-            <div class="menu-card" *ngFor="let item of menuItems">
-                <a href="#">{{ item }}</a>
-            </div>
-        </div>
-    </header>
+  </head>
+  <body>
     <div class="hero">
-        <img src="../../assets/backgrounds/astronaut.jpg" alt="HHC Vape">
+      <img src="../../assets/backgrounds/astronaut.jpg" alt="HHC Vape" />
     </div>
-    <h1 style="text-align: center; color: #003366;">HHC Vape – Vaping so out of this world, Elon would love it.</h1>
+    <h1 style="text-align: center; color: #003366">
+      HHC Vape – Vaping so out of this world, Elon would love it.
+    </h1>
     <div class="products">
-        <div class="product">
-            <img src="../../assets/items/Amnesia Haze.webp" alt="Amnesia Haze">
-            <h3>Amnesia Haze | HHC Vape | 2.0 ML</h3>
-            <p>AB 37,46€</p>
-            <button>In den Warenkorb</button>
-        </div>
-        <div class="product">
-            <img src="../../assets/items/Gorilla Glue.webp" alt="Pineapple Express">
-            <h3>Pineapple Express | HHC Vape | 2.0 ML</h3>
-            <p>AB 37,46€</p>
-            <button>In den Warenkorb</button>
-        </div>
-        <div class="product">
-            <img src="../../assets/items/OG Kush.webp" alt="Gorilla Glue">
-            <h3>Gorilla Glue | HHC Vape | 2.0 ML</h3>
-            <p>AB 37,46€</p>
-            <button>In den Warenkorb</button>
-        </div>
-        <div class="product">
-            <img src="../../assets/items/Pineapple Express.webp" alt="OG Kush">
-            <h3>OG Kush | HHC Vape | 2.0 ML</h3>
-            <p>AB 37,46€</p>
-            <button>In den Warenkorb</button>
-        </div>
-    </div>    
-    
-</body>
+      <div class="product">
+        <img src="../../assets/items/Amnesia Haze.webp" alt="Amnesia Haze" />
+        <h3>Amnesia Haze | HHC Vape | 2.0 ML</h3>
+        <p>AB 37,46€</p>
+        <button (click)="addToCart('Amnesia Haze', 37.46)">
+          In den Warenkorb
+        </button>
+      </div>
+      <div class="product">
+        <img
+          src="../../assets/items/Gorilla Glue.webp"
+          alt="Pineapple Express"
+        />
+        <h3>Pineapple Express | HHC Vape | 2.0 ML</h3>
+        <p>AB 37,46€</p>
+        <button (click)="addToCart('Pineapple Express', 37.46)">
+          In den Warenkorb
+        </button>
+      </div>
+      <div class="product">
+        <img src="../../assets/items/OG Kush.webp" alt="Gorilla Glue" />
+        <h3>Gorilla Glue | HHC Vape | 2.0 ML</h3>
+        <p>AB 37,46€</p>
+        <button (click)="addToCart('Gorilla Glue', 37.46)">
+          In den Warenkorb
+        </button>
+      </div>
+      <div class="product">
+        <img src="../../assets/items/Pineapple Express.webp" alt="OG Kush" />
+        <h3>OG Kush | HHC Vape | 2.0 ML</h3>
+        <p>AB 37,46€</p>
+        <button (click)="addToCart('OG Kush', 37.46)">In den Warenkorb</button>
+      </div>
+    </div>
+  </body>
 </html>

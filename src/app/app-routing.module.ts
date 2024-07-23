@@ -10,7 +10,6 @@ import { SignupComponent } from './signup/signup.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { QrScannerComponent } from './qr-scanner/qr-scanner.component';
 import { MenuPageComponent } from './menu-page/menu-page.component';
-import { MenuPage2Component } from './menu-page2/menu-page2.component';
 import { AuthGuard } from './auth/auth.guard';
 import { LayoutComponent } from './layout/layout.component';
 
@@ -37,11 +36,6 @@ const routes: Routes = [
   { path: 'payment', component: PaymentComponent, canActivate: [AuthGuard] },
   { path: 'menu', component: MenuComponent, canActivate: [AuthGuard] },
   { path: 'menu-page', component: MenuPageComponent, canActivate: [AuthGuard] },
-  {
-    path: 'menu-page2',
-    component: MenuPage2Component,
-    canActivate: [AuthGuard],
-  },
   { path: 'cart', component: CartComponent, canActivate: [AuthGuard] },
   { path: 'layout', component: LayoutComponent, canActivate: [AuthGuard] },
   { path: 'qr', component: QrScannerComponent, canActivate: [AuthGuard] },

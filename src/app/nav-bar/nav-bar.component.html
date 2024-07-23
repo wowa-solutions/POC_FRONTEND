@@ -4,7 +4,8 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse">
-    <ul class="navbar-nav d-none d-lg-flex" [class.d-none]="isMenuOpen"> <!-- Menü bei Hamburger-Menü ausgeblendet -->
+    <ul class="navbar-nav d-none d-lg-flex" [class.d-none]="isMenuOpen">
+      <!-- Menü bei Hamburger-Menü ausgeblendet -->
       <li class="nav-item active">
         <a class="nav-link" href="#">Home</a>
       </li>
@@ -12,12 +13,10 @@
         <a class="nav-link" routerLink="/login">Login</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/menu">Menu-Old</a></li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/menu-page">Menu-Page</a>
+        <a class="nav-link" routerLink="/menu">Menu-Old</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/menu-page2">Menu-Page2</a>
+        <a class="nav-link" routerLink="/menu-page">Menu-Page</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/mainpage">Main Page</a>
@@ -36,25 +35,54 @@
       </li>
     </ul>
   </div>
-  <div class="navbar-icons d-flex justify-content-end" [class.d-none]="isMenuOpen">
-    <i class="fas fa-cart-shopping" style="margin-right:20px; cursor: pointer;"
-       [@cartBounce]="cartState" (click)="cartModal.openModal()"></i>
-    <app-cart-modal #cartModal></app-cart-modal>      
+  <div
+    class="navbar-icons d-flex justify-content-end"
+    [class.d-none]="isMenuOpen"
+  >
+    <i
+      class="fas fa-cart-shopping"
+      style="margin-right: 20px; cursor: pointer"
+      [@cartBounce]="cartState"
+      (click)="cartModal.openModal()"
+    ></i>
+    <app-cart-modal #cartModal></app-cart-modal>
 
-    <i class="fas fa-user" style="margin-right:20px; cursor: pointer;" (click)="userModal.openModal()"></i>
+    <i
+      class="fas fa-user"
+      style="margin-right: 20px; cursor: pointer"
+      (click)="userModal.openModal()"
+    ></i>
     <app-user-modal #userModal></app-user-modal>
   </div>
-  
+
   <!-- Menü-Kacheln für das Hamburger-Menü -->
-  <div class="menu-kacheln" [ngClass]="{ 'show': isMenuOpen }">
-    <div class="menu-card" (click)="navigateAndClose('/')"><a routerLink="/">Home</a></div>
-    <div class="menu-card" (click)="navigateAndClose('/login')"><a routerLink="/login">Login</a></div>
-    <div class="menu-card" (click)="navigateAndClose('/menu')"><a routerLink="/menu">Menu-Old</a></div>
-    <div class="menu-card" (click)="navigateAndClose('/menu-page')"><a routerLink="/menu-page">Menu-Page</a></div>
-    <div class="menu-card" (click)="navigateAndClose('/menu-page2')"><a routerLink="/menu-page2">Menu-Page2</a></div>
-    <div class="menu-card" (click)="navigateAndClose('/mainpage')"><a routerLink="/mainpage">Main Page</a></div>
-    <div class="menu-card" (click)="navigateAndClose('/payment')"><a routerLink="/payment">Payment</a></div>
-    <div class="menu-card" (click)="navigateAndClose('/cart')"><a routerLink="/cart">Cart</a></div>
-    <div class="menu-card" (click)="navigateAndClose('/qr')"><a routerLink="/qr">QR-Code</a></div>
+  <div class="menu-kacheln" [ngClass]="{ show: isMenuOpen }">
+    <div class="menu-card" (click)="navigateAndClose('/')">
+      <a routerLink="/">Home</a>
+    </div>
+    <div class="menu-card" (click)="navigateAndClose('/login')">
+      <a routerLink="/login">Login</a>
+    </div>
+    <div class="menu-card" (click)="navigateAndClose('/menu')">
+      <a routerLink="/menu">Menu-Old</a>
+    </div>
+    <div class="menu-card" (click)="navigateAndClose('/menu-page')">
+      <a routerLink="/menu-page">Menu-Page</a>
+    </div>
+    <div class="menu-card" (click)="navigateAndClose('/menu-page2')">
+      <a routerLink="/menu-page2">Menu-Page2</a>
+    </div>
+    <div class="menu-card" (click)="navigateAndClose('/mainpage')">
+      <a routerLink="/mainpage">Main Page</a>
+    </div>
+    <div class="menu-card" (click)="navigateAndClose('/payment')">
+      <a routerLink="/payment">Payment</a>
+    </div>
+    <div class="menu-card" (click)="navigateAndClose('/cart')">
+      <a routerLink="/cart">Cart</a>
+    </div>
+    <div class="menu-card" (click)="navigateAndClose('/qr')">
+      <a routerLink="/qr">QR-Code</a>
+    </div>
   </div>
 </nav>
