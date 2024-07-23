@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import { LoginService } from 'src/services/login.service';
 
 @Component({
   selector: 'app-navbar',
@@ -48,7 +49,7 @@ export class NavbarComponent {
     },
   ];
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private loginService: LoginService) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.isMenuOpen = false;
@@ -142,5 +143,9 @@ export class NavbarComponent {
     ) {
       this.isMenuOpen = false;
     }
+  }
+
+  logoutProcess() {
+    this.loginService.logoutProcess();
   }
 }
