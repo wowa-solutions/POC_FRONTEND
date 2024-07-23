@@ -73,9 +73,23 @@
   display: none;
 }
 
-/* Anpassungen für große Bildschirme */
+/* Close icon for menu */
+.close-menu {
+  display: none;
+  font-size: 35px; /* Größeres Icon */
+  cursor: pointer;
+  color: red;
+  position: absolute;
+  left: 10px; /* Abstand vom linken Rand */
+  top: 10px; /* Abstand vom oberen Rand */
+  z-index: 11; /* Sicherstellen, dass es über anderen Elementen liegt */
+}
+
 @media (max-width: 768px) {
   .menu-kacheln {
     display: none; /* Kacheln nur auf mobilen Geräten anzeigen */
+  }
+  .menu-kacheln.show .close-menu {
+    display: block; /* Zeige das X-Icon */
   }
 }

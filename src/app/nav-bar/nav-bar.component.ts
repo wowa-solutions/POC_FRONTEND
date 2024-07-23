@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CartService } from '../../services/cart.service';
 import {
@@ -8,7 +8,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -48,18 +48,46 @@ export class NavBarComponent {
         this.cartState = 'small'; // Zustand wird nach einer kurzen Verzögerung wieder auf 'small' gesetzt
       }, 350); // Verzögerung in Millisekunden
     });
+
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.isMenuOpen = false;
+      }
+    });
   }
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
 
-  toggleMenu() {
+  toggleMenu(event?: Event) {
+    if (event) {
+      event.stopPropagation();
+    }
     this.isMenuOpen = !this.isMenuOpen;
   }
 
   navigateAndClose(route: string) {
     this.router.navigate([route]);
     this.isMenuOpen = false;
+  }
+
+  @HostListener('document:click', ['$event'])
+  onClick(event: MouseEvent) {
+    const menu = document.querySelector('.menu-kacheln');
+    const menuIcon = document.querySelector('.menu-icon');
+    const closeMenuIcon = document.querySelector('.close-menu');
+
+    if (
+      menu &&
+      menuIcon &&
+      closeMenuIcon &&
+      !menu.contains(event.target as Node) &&
+      !menuIcon.contains(event.target as Node) &&
+      !closeMenuIcon.contains(event.target as Node) &&
+      this.isMenuOpen
+    ) {
+      this.isMenuOpen = false;
+    }
   }
 }

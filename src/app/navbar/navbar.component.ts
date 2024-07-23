@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -47,7 +48,18 @@ export class NavbarComponent {
     },
   ];
 
-  toggleMenu() {
+  constructor(private router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.isMenuOpen = false;
+      }
+    });
+  }
+
+  toggleMenu(event?: Event) {
+    if (event) {
+      event.stopPropagation();
+    }
     this.isMenuOpen = !this.isMenuOpen;
   }
 
@@ -95,6 +107,9 @@ export class NavbarComponent {
     const cartButton = document.querySelector('.fa-shopping-cart');
     const userMenu = document.querySelector('.user-menu');
     const userButton = document.querySelector('.fa-user');
+    const menu = document.querySelector('.menu');
+    const menuIcon = document.querySelector('.menu-icon');
+    const closeMenuIcon = document.querySelector('.close-menu');
 
     if (
       cart &&
@@ -114,6 +129,18 @@ export class NavbarComponent {
       this.isUserMenuOpen
     ) {
       this.isUserMenuOpen = false;
+    }
+
+    if (
+      menu &&
+      menuIcon &&
+      closeMenuIcon &&
+      !menu.contains(event.target as Node) &&
+      !menuIcon.contains(event.target as Node) &&
+      !closeMenuIcon.contains(event.target as Node) &&
+      this.isMenuOpen
+    ) {
+      this.isMenuOpen = false;
     }
   }
 }
