@@ -38,7 +38,11 @@ import { PizzaItemModalComponent } from './Item-Modals/pizza-item-modal/pizza-it
 import { MenuPageComponent } from './menu-page/menu-page.component';
 import { MenuPage2Component } from './menu-page2/menu-page2.component';
 import { UserModalComponent } from './user-modal/user-modal.component';
-
+import { PaymentNewComponent } from './payment-new/payment-new.component';
+import { FloatLabelModule } from 'primeng/floatlabel';
+import { CheckboxModule } from 'primeng/checkbox';
+import { DropdownModule } from 'primeng/dropdown';
+import { RadioButtonModule } from 'primeng/radiobutton';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,7 +70,8 @@ import { UserModalComponent } from './user-modal/user-modal.component';
     PizzaItemModalComponent,
     MenuPageComponent,
     MenuPage2Component,
-    UserModalComponent
+    UserModalComponent,
+    PaymentNewComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,7 +83,11 @@ import { UserModalComponent } from './user-modal/user-modal.component';
     ButtonModule,
     InputTextModule,
     DataViewModule,  
-    TableModule
+    TableModule,
+    FloatLabelModule,
+    CheckboxModule,
+    DropdownModule,
+    RadioButtonModule,
   ],
   providers: [CartService, ProductService],
   bootstrap: [AppComponent]

@@ -1,0 +1,157 @@
+<div class="checkout-container">
+  <div class="contact-form">
+    <h2>Kontakt</h2>
+    <div class="p-fluid">
+      <div class="p-field">
+        <label for="email">E-Mail</label>
+        <input id="email" type="email" pInputText />
+      </div>
+      <div class="p-field-checkbox">
+        <p-checkbox inputId="newsletter" [(ngModel)]="newsletter"></p-checkbox>
+        <label for="newsletter"
+          >Neuigkeiten und Angebote via E-Mail erhalten</label
+        >
+      </div>
+    </div>
+
+    <div class="deliveryContainer">
+      <h2>Lieferung</h2>
+      <div class="p-fluid">
+        <div class="p-field">
+          <label for="country">Land / Region</label>
+          <p-dropdown
+            [options]="countries"
+            [(ngModel)]="selectedCountry"
+            placeholder="Deutschland"
+          ></p-dropdown>
+        </div>
+        <div class="p-field">
+          <label for="firstName">Vorname</label>
+          <input id="firstName" type="text" pInputText />
+        </div>
+        <div class="p-field">
+          <label for="lastName">Nachname</label>
+          <input id="lastName" type="text" pInputText />
+        </div>
+        <div class="p-field">
+          <label for="address">Adresse mit Hausnummer</label>
+          <input id="address" type="text" pInputText />
+        </div>
+        <div class="p-field">
+          <label for="address2">Adresszusatz</label>
+          <input id="address2" type="text" pInputText />
+        </div>
+        <div class="p-field">
+          <label for="postalCode">Postleitzahl</label>
+          <input id="postalCode" type="text" pInputText />
+        </div>
+        <div class="p-field">
+          <label for="city">Stadt</label>
+          <input id="city" type="text" pInputText />
+        </div>
+        <div class="p-field">
+          <label for="phone">Telefon (optional)</label>
+          <input id="phone" type="text" pInputText />
+        </div>
+        <div class="p-field-checkbox">
+          <p-checkbox inputId="saveInfo" [(ngModel)]="saveInfo"></p-checkbox>
+          <label for="saveInfo"
+            >Meine Informationen speichern und nächstes Mal schneller
+            bezahlen</label
+          >
+        </div>
+      </div>
+    </div>
+
+    <h2>Zahlung</h2>
+    <p>Alle Transaktionen sind sicher und verschlüsselt.</p>
+    <div class="p-field-radiobutton">
+      <p-radioButton
+        name="payment"
+        value="bank"
+        [(ngModel)]="paymentMethod"
+        inputId="bank"
+      ></p-radioButton>
+      <label for="bank">Banküberweisung</label>
+      <p>SEPA-Überweisung (Vorkasse)</p>
+    </div>
+    <hr />
+    <div class="p-field-radiobutton">
+      <p-radioButton
+        name="payment"
+        value="creditcard"
+        [(ngModel)]="paymentMethod"
+        inputId="creditcard"
+      ></p-radioButton>
+      <label for="creditcard">Kreditkarte</label>
+      <img
+        src="path_to_visa_mastercard_amex_logos"
+        alt="Visa, MasterCard, AMEX"
+      />
+    </div>
+    <hr />
+    <div class="p-field-radiobutton">
+      <p-radioButton
+        name="payment"
+        value="cashondelivery"
+        [(ngModel)]="paymentMethod"
+        inputId="cashondelivery"
+      ></p-radioButton>
+      <label for="cashondelivery">Nachnahme (+4,99€)</label>
+    </div>
+
+    <h2>Rechnungsadresse</h2>
+    <div class="p-field-radiobutton">
+      <p-radioButton
+        name="billing"
+        value="same"
+        [(ngModel)]="billingAddress"
+        inputId="sameAddress"
+      ></p-radioButton>
+      <label for="sameAddress">Mit der Lieferadresse identisch</label>
+    </div>
+    <div class="p-field-radiobutton">
+      <p-radioButton
+        name="billing"
+        value="different"
+        [(ngModel)]="billingAddress"
+        inputId="differentAddress"
+      ></p-radioButton>
+      <label for="differentAddress"
+        >Eine andere Rechnungsadresse verwenden</label
+      >
+    </div>
+  </div>
+
+  <div class="summary">
+    <div class="summary-item">
+      <p>Chickenwings Hot</p>
+      <p>15.99 €</p>
+    </div>
+    <div class="p-field">
+      <input
+        id="discountCode"
+        type="text"
+        pInputText
+        placeholder="Rabattcode"
+      />
+      <button pButton type="button" label="Anwenden"></button>
+    </div>
+    <div class="summary-total">
+      <p>Zwischensumme</p>
+      <p>15.99 €</p>
+    </div>
+    <div class="summary-total">
+      <p>Versand</p>
+      <p>Lieferadresse eingeben</p>
+    </div>
+    <div class="summary-total">
+      <p>Gesamt</p>
+      <p>15.99 €</p>
+    </div>
+    <p>inkl. 2,26 € MwSt</p>
+    <div class="card flex justify-content-center">
+      <p-button class="buybutton" label="Bezahlen" />
+    </div>
+  </div>
+</div>

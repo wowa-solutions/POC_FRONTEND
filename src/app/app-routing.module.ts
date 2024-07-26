@@ -12,6 +12,7 @@ import { QrScannerComponent } from './qr-scanner/qr-scanner.component';
 import { MenuPageComponent } from './menu-page/menu-page.component';
 import { MenuPage2Component } from './menu-page2/menu-page2.component';
 import { AuthGuard } from './auth/auth.guard';
+import { PaymentNewComponent } from './payment-new/payment-new.component';
 
 
 
@@ -36,6 +37,7 @@ const routes: Routes = [
   },
   { path: 'mainpage', component: MainpageComponent, canActivate: [AuthGuard] },
   { path: 'payment', component: PaymentComponent, canActivate: [AuthGuard] },
+  { path: 'payment-new', component: PaymentNewComponent, canActivate: [AuthGuard]},
   { path: 'menu', component: MenuComponent, canActivate: [AuthGuard] },
   { path: 'menu-page', component: MenuPageComponent, canActivate: [AuthGuard] },
   { path: 'menu-page2', component: MenuPage2Component, canActivate: [AuthGuard] },
