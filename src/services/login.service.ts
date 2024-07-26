@@ -1,39 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ToastService } from './toastr.service';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoginService {
   constructor(
-    private http: HttpClient,
-    private toastService: ToastService,
+    private http: HttpClient
   ) {}
 
-  loginProcess(userEmail: any, userPassword: any): void {
-    this.http
-      .post('http://localhost:3000/login/', {
-        email: userEmail,
-        password: userPassword,
-      })
-      .subscribe((data) => {
-        if (data === true) {
-          localStorage.setItem('userToken', 'your-token');
-          this.toastService.showSuccess(
-            'User is logged in.',
-            'Login successful.',
-          );
-          setTimeout(() => {
-            window.location.reload();
-          }, 1500);
-        } else {
-          this.toastService.showError(
-            'User is not logged in.',
-            'Login failed.',
-          );
-        }
-      });
+  loginProcess(userEmail: any, userPassword: any): Observable<any> {
+    return this.http.post('http://localhost:3000/login/', {
+      email: userEmail,
+      password: userPassword,
+    });
   }
 
   logoutProcess() {

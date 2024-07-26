@@ -39,6 +39,7 @@ import { CartService } from '../services/cart.service';
 import { ProductService } from '../services/product.service';
 import { LayoutComponent } from './layout/layout.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { UserService } from 'src/services/user.service';
 ToastrModule.forRoot(); // ToastrModule importiert
 
 @NgModule({
@@ -89,7 +90,7 @@ ToastrModule.forRoot(); // ToastrModule importiert
     DataViewModule,
     TableModule,
   ],
-  providers: [CartService, ProductService],
+  providers: [CartService, ProductService, UserService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

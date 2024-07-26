@@ -48,15 +48,41 @@ export class LoginComponent implements OnInit {
     this.signupForm.reset();
   }
 
-  loginProcess(): void {
-    var userEmail = this.loginForm.value.Email?.toString();
-    var userPassword = this.loginForm.value.Password?.toString();
-    this.loginService.loginProcess(userEmail, userPassword);
+  loginProcess() {
+    const userEmail = this.loginForm.value.Email?.toString();
+    const userPassword = this.loginForm.value.Password?.toString();
 
-    console.log({
-      email: this.loginForm.value.Email,
-      password: this.loginForm.value.Password,
-    });
+    this.loginService.loginProcess(userEmail, userPassword).subscribe(
+      (data: any) => {
+
+        if (data) {
+
+      
+          localStorage.setItem('userToken', 'your-token'); // richtigen token erstellen
+          localStorage.setItem('userId', data._id); // userId in Storage speichern, wird im user.service verwendet, um zu überprüfen, ob der user noch eingeloggt ist
+          this.toastService.showSuccess(
+            'User is logged in.',
+            'Login successful.'
+          );
+          setTimeout(() => {
+            window.location.reload();
+          }, 1500);
+        } else {
+          this.toastService.showError(
+            'User is not logged in.',
+            'Login failed.'
+          );
+        }
+        console.log('Login response:', data);
+      },
+      error => {
+        console.error('Login request failed:', error);
+        this.toastService.showError(
+          'An error occurred during login.',
+          'Login failed.'
+        );
+      }
+    );
   }
 
   signUpProcess() {
