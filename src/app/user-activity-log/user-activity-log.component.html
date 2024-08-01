@@ -1,0 +1,17 @@
+<p-card>
+    <ng-template pTemplate="header">
+      <div class="content-padding">
+        <h2>Activity Log</h2>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="content">
+      <div class="content-padding">
+        <ul>
+          <li *ngFor="let activity of activities">
+            <p><strong>{{ activity.date }}:</strong> {{ activity.description }}</p>
+          </li>
+        </ul>
+      </div>
+    </ng-template>
+  </p-card>
+  

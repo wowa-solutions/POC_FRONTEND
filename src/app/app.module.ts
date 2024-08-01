@@ -55,6 +55,7 @@ import { CardModule } from 'primeng/card';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { PanelModule } from 'primeng/panel';
 import { DropdownModule } from 'primeng/dropdown';
+import { UserActivityLogComponent } from './user-activity-log/user-activity-log.component';
 
 
 
@@ -96,6 +97,7 @@ ToastrModule.forRoot();
     UserAddressComponent,
     UserPaymentMethodsComponent,
     UserSettingsComponent,
+    UserActivityLogComponent,
   ],
   imports: [
     BrowserModule,
