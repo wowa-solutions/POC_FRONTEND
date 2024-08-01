@@ -1,0 +1,67 @@
+<p-card>
+  <ng-template pTemplate="header">
+    <div class="content-padding">
+      <h2>User Address</h2>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="content">
+    <div class="content-padding">
+
+      <div *ngIf="!editMode">
+        <p><strong>ID:</strong> {{ user.id }}</p>
+        <p><strong>Username:</strong> {{ user.username }}</p>
+        <p><strong>First Name:</strong> {{ user.firstname }}</p>
+        <p><strong>Last Name:</strong> {{ user.lastname }}</p>
+        <p><strong>Postcode:</strong> {{ user.postcode }}</p>
+        <p><strong>Street:</strong> {{ user.street }} {{ user.number }}</p>
+        <p><strong>City:</strong> {{ user.city }}</p>
+        <p><strong>Country:</strong> {{ user.country }}</p>
+        <button pButton type="button" label="Edit" icon="pi pi-pencil" (click)="toggleEditMode()"></button>
+      </div>
+
+      <div *ngIf="editMode">
+        <div class="p-fluid">
+          <div class="p-field">
+            <label for="userId">ID:</label>
+            <input id="userId" type="text" pInputText [(ngModel)]="user.id" disabled>
+          </div>
+          <div class="p-field">
+            <label for="username">Username:</label>
+            <input id="username" type="text" pInputText [(ngModel)]="user.username" disabled>
+          </div>
+          <div class="p-field">
+            <label for="firstname">First Name:</label>
+            <input id="firstname" type="text" pInputText [(ngModel)]="user.firstname">
+          </div>
+          <div class="p-field">
+            <label for="lastname">Last Name:</label>
+            <input id="lastname" type="text" pInputText [(ngModel)]="user.lastname">
+          </div>
+          <div class="p-field">
+            <label for="postcode">Postcode:</label>
+            <input id="postcode" type="text" pInputText [(ngModel)]="user.postcode">
+          </div>
+          <div class="p-field">
+            <label for="street">Street:</label>
+            <input id="street" type="text" pInputText [(ngModel)]="user.street">
+          </div>
+          <div class="p-field">
+            <label for="number">Number:</label>
+            <input id="number" type="text" pInputText [(ngModel)]="user.number">
+          </div>
+          <div class="p-field">
+            <label for="city">City:</label>
+            <input id="city" type="text" pInputText [(ngModel)]="user.city">
+          </div>
+          <div class="p-field">
+            <label for="country">Country:</label>
+            <input id="country" type="text" pInputText [(ngModel)]="user.country">
+          </div>
+          <button pButton type="button" label="Save" icon="pi pi-check" class="p-mr-2" style="margin-top:25px;" (click)="saveProfile()"></button>
+          <button pButton type="button" label="Cancel" icon="pi pi-times" class="p-button-danger" style="margin-top:10px;" (click)="toggleEditMode()"></button>
+        </div>
+      </div>
+
+    </div>
+  </ng-template>
+</p-card>

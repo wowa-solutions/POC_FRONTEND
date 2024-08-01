@@ -41,6 +41,13 @@
             <button (click)="removeFromCart(item)">-</button>
             <span>{{ item.quantity }}</span>
             <button (click)="addToCart(item.name, item.price)">+</button>
+              <button
+                type="button"
+                class="removeButton"
+                (click)="removeFromCart(item)"
+              >
+                <i class="fas fa-trash"></i>
+              </button>
           </div>
         </div>
       </div>
@@ -57,8 +64,8 @@
       <button class="close-user-menu" (click)="toggleUserMenu($event)">X</button>
     </div>
     <div class="user-menu-content">
-      <a href="#">Profil</a>
-      <a href="#">Einstellungen</a>
+      <a href="/profile">Profil</a>
+      <a href="/settings">Einstellungen</a>
     </div>
     <div class="user-menu-footer">
       <button (click)="logoutProcess()" class="logout-button">Logout</button>

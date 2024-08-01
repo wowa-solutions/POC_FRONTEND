@@ -47,6 +47,54 @@ export class NavbarComponent {
       quantity: 1,
       image: '../../assets/items/Pineapple Express.webp',
     },
+    {
+      name: 'Amnesia Haze',
+      price: 37.46,
+      quantity: 1,
+      image: '../../assets/items/Amnesia Haze.webp',
+    },
+    {
+      name: 'Pineapple Express',
+      price: 37.46,
+      quantity: 1,
+      image: '../../assets/items/Gorilla Glue.webp',
+    },
+    {
+      name: 'Gorilla Glue',
+      price: 37.46,
+      quantity: 1,
+      image: '../../assets/items/OG Kush.webp',
+    },
+    {
+      name: 'OG Kush',
+      price: 37.46,
+      quantity: 1,
+      image: '../../assets/items/Pineapple Express.webp',
+    },
+    {
+      name: 'Amnesia Haze',
+      price: 37.46,
+      quantity: 1,
+      image: '../../assets/items/Amnesia Haze.webp',
+    },
+    {
+      name: 'Pineapple Express',
+      price: 37.46,
+      quantity: 1,
+      image: '../../assets/items/Gorilla Glue.webp',
+    },
+    {
+      name: 'Gorilla Glue',
+      price: 37.46,
+      quantity: 1,
+      image: '../../assets/items/OG Kush.webp',
+    },
+    {
+      name: 'OG Kush',
+      price: 37.46,
+      quantity: 1,
+      image: '../../assets/items/Pineapple Express.webp',
+    },
   ];
 
   constructor(private router: Router, private loginService: LoginService) {

@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="navigation">
+    <app-user-navigation (sectionChange)="onSectionChange($event)"></app-user-navigation>
+  </div>
+  <div class="content">
+    <div *ngIf="currentSection === 'user-address'">
+      <app-user-address></app-user-address>
+    </div>
+    <div *ngIf="currentSection === 'payment-methods'">
+      <app-user-payment-methods></app-user-payment-methods>
+    </div>
+    <div *ngIf="currentSection === 'user-settings'">
+      <app-user-settings></app-user-settings>
+    </div>
+    <!-- Weitere Inhalte können hier hinzugefügt werden -->
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<p-card>
+    <ng-template pTemplate="header">
+        <div class="content-padding">
+
+            <h2>Settings</h2>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="content">
+      <div class="content-padding">
+        <div *ngIf="!editMode">
+          <p><strong>Email Notifications:</strong> {{ settings.emailNotifications ? 'Enabled' : 'Disabled' }}</p>
+          <p><strong>Two-Factor Authentication:</strong> {{ settings.twoFactorAuthentication ? 'Enabled' : 'Disabled' }}</p>
+          <p><strong>Language:</strong> {{ settings.language }}</p>
+          <button pButton type="button" label="Edit" icon="pi pi-pencil" (click)="toggleEditMode()"></button>
+        </div>
+  
+        <div *ngIf="editMode">
+          <div class="p-fluid">
+            <div class="p-field-checkbox">
+              <p-checkbox [(ngModel)]="settings.emailNotifications" binary="true" inputId="emailNotifications"></p-checkbox>
+              <label for="emailNotifications">Email Notifications</label>
+            </div>
+            <div class="p-field-checkbox">
+              <p-checkbox [(ngModel)]="settings.twoFactorAuthentication" binary="true" inputId="twoFactorAuthentication"></p-checkbox>
+              <label for="twoFactorAuthentication">Two-Factor Authentication</label>
+            </div>
+            <div class="p-field">
+              <label for="language">Language:</label>
+              <p-dropdown [options]="languages" [(ngModel)]="settings.language" placeholder="Select a Language"></p-dropdown>
+            </div>
+            <button pButton type="button" label="Save" icon="pi pi-check" class="p-mr-2" style="margin-top:25px;" (click)="saveSettings()"></button>
+            <button pButton type="button" label="Cancel" icon="pi pi-times" class="p-button-danger" style="margin-top:10px;" (click)="toggleEditMode()"></button>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-card>
+  

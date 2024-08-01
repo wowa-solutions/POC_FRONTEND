@@ -1,0 +1,35 @@
+<p-card>
+    <ng-template pTemplate="header">
+      <div class="content-padding">
+        <h2>Payment Methods</h2>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="content">
+      <div class="content-padding">
+        <div *ngIf="!editMode">
+          <div *ngFor="let method of paymentMethods">
+            <p><strong>{{ method.type }}:</strong> {{ method.details }}</p>
+          </div>
+          <button pButton type="button" label="Edit" icon="pi pi-pencil" (click)="toggleEditMode()"></button>
+        </div>
+  
+        <div *ngIf="editMode">
+          <div class="p-fluid">
+            <div *ngFor="let method of paymentMethods; let i = index">
+              <div class="p-field">
+                <label for="type-{{i}}">Type:</label>
+                <input id="type-{{i}}" type="text" pInputText [(ngModel)]="method.type">
+              </div>
+              <div class="p-field">
+                <label for="details-{{i}}">Details:</label>
+                <input id="details-{{i}}" type="text" pInputText [(ngModel)]="method.details">
+              </div>
+            </div>
+            <button pButton type="button" label="Save" icon="pi pi-check" class="p-mr-2" style="margin-top:25px;" (click)="savePaymentMethods()"></button>
+            <button pButton type="button" label="Cancel" icon="pi pi-times" class="p-button-danger" style="margin-top:10px;" (click)="toggleEditMode()"></button>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-card>
+  

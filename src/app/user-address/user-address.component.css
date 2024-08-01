@@ -1,0 +1,8 @@
+p{
+    border-bottom:solid black 1px;
+    margin-bottom: 25px;
+}
+
+.content-padding {
+    padding: 1rem; /* Anpassbares Padding */
+}

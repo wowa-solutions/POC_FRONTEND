@@ -12,6 +12,7 @@ import { QrScannerComponent } from './qr-scanner/qr-scanner.component';
 import { MenuPageComponent } from './menu-page/menu-page.component';
 import { AuthGuard } from './auth/auth.guard';
 import { LayoutComponent } from './layout/layout.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,7 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent, canActivate: [AuthGuard] },
   { path: 'layout', component: LayoutComponent, canActivate: [AuthGuard] },
   { path: 'qr', component: QrScannerComponent, canActivate: [AuthGuard] },
+  { path: 'profile', component: UserProfileComponent },
   { path: '**', component: NotFoundPageComponent },
 ];
 
