@@ -1,0 +1,24 @@
+  .dashboard-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .stats-card, .activities-card, .notifications-card, .quick-links-card {
+    flex: 1 1 calc(50% - 1rem);
+    margin: 1rem;
+  }
+  
+  .stats-card p{
+    padding-left:25px;
+  }
+  
+  
+  .stats-card h2, .activities-card h2, .notifications-card h2, .quick-links-card h2 {
+    padding-left:25px; 
+    padding-top:25px;
+  }
+
+  .quick-links-card button{
+    margin-right: 25px;
+  }

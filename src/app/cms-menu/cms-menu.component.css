@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .navigation {
+    flex: 0 0 20%;
+    background-color: #f8f9fa; /* Optional: Hintergrundfarbe für Navigation */
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .content {
+    flex: 1;
+    padding: 1rem;
+    box-sizing: border-box;
+  }

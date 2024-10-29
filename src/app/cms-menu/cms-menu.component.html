@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="navigation">
+      <app-cms-navigation (sectionChange)="onSectionChange($event)"></app-cms-navigation>
+    </div>
+    <div class="content">
+      <div *ngIf="currentSection === 'dashboard'">
+        <app-cms-dashboard></app-cms-dashboard>
+      </div>
+      <div *ngIf="currentSection === 'pages'">
+        <!-- <app-pages></app-pages> -->
+      </div>
+      <div *ngIf="currentSection === 'media'">
+        <!-- <app-media></app-media> -->
+      </div>
+      <div *ngIf="currentSection === 'settings'">
+        <!-- <app-settings></app-settings> -->
+      </div>
+      <div *ngIf="currentSection === 'users'">
+        <app-cms-users></app-cms-users>
+      </div>
+      <!-- Weitere Inhalte können hier hinzugefügt werden -->
+    </div>
+  </div>

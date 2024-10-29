@@ -1,0 +1,60 @@
+        
+        <div class="content-padding">
+          <div class="dashboard-container">
+              <div class="stats-card">
+                <p-card>
+                  <ng-template pTemplate="header">
+                    <h2>Visitor Statistics</h2>
+                  </ng-template>
+                  <ng-template pTemplate="content">
+                      <p><strong>Today:</strong> {{ visitorStats.today }}</p>
+                      <p ><strong>This Week:</strong> {{ visitorStats.thisWeek }}</p>
+                      <p><strong>This Month:</strong> {{ visitorStats.thisMonth }}</p>
+                  </ng-template>
+                </p-card>
+          </div>
+        </div>
+          
+            <div class="activities-card">
+              <p-card>
+                <ng-template pTemplate="header">
+                  <h2>Recent Activities</h2>
+                </ng-template>
+                <ng-template pTemplate="content">
+                  <ul>
+                    <li *ngFor="let activity of recentActivities">
+                      <p><strong>{{ activity.date }}:</strong> {{ activity.description }}</p>
+                    </li>
+                  </ul>
+                </ng-template>
+              </p-card>
+            </div>
+          
+            <div class="notifications-card">
+              <p-card>
+                <ng-template pTemplate="header">
+                  <h2>Notifications</h2>
+                </ng-template>
+                <ng-template pTemplate="content">
+                  <ul>
+                    <li *ngFor="let notification of notifications">
+                      <p><strong>{{ notification.date }}:</strong> {{ notification.message }}</p>
+                    </li>
+                  </ul>
+                </ng-template>
+              </p-card>
+            </div>
+          
+            <div class="quick-links-card">
+              <p-card>
+                <ng-template pTemplate="header">
+                  <h2>Quick Links</h2>
+                </ng-template>
+                <ng-template pTemplate="content">
+                  <button pButton type="button" label="Create New Page" icon="pi pi-plus" class="p-mr-2"></button>
+                  <button pButton type="button" label="View Users" icon="pi pi-users" class="p-mr-2"></button>
+                  <button pButton type="button" label="Settings" icon="pi pi-cog" class="p-mr-2"></button>
+                </ng-template>
+              </p-card>
+            </div>
+          </div>

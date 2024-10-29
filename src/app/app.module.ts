@@ -36,10 +36,15 @@ import { UserModalComponent } from './user-modal/user-modal.component';
 import { LayoutComponent } from './layout/layout.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
-import { UserNavigationComponent } from './user-navigation/user-navigation.component';
-import { UserAddressComponent } from './user-address/user-address.component';
-import { UserPaymentMethodsComponent } from './user-payment-methods/user-payment-methods.component';
-import { UserSettingsComponent } from './user-settings/user-settings.component';
+import { UserNavigationComponent } from './user-profile/user-navigation/user-navigation.component';
+import { UserAddressComponent } from './user-profile/user-address/user-address.component';
+import { UserPaymentMethodsComponent } from './user-profile/user-payment-methods/user-payment-methods.component';
+import { UserSettingsComponent } from './user-profile/user-settings/user-settings.component';
+import { UserActivityLogComponent } from './user-profile/user-activity-log/user-activity-log.component';
+import { CmsDashboardComponent } from './cms-menu/cms-dashboard/cms-dashboard.component';
+import { CmsNavigationComponent } from './cms-menu/cms-navigation/cms-navigation.component';
+import { CmsMenuComponent } from './cms-menu/cms-menu.component';
+
 
 // Services
 import { CartService } from '../services/cart.service';
@@ -55,7 +60,10 @@ import { CardModule } from 'primeng/card';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { PanelModule } from 'primeng/panel';
 import { DropdownModule } from 'primeng/dropdown';
-import { UserActivityLogComponent } from './user-activity-log/user-activity-log.component';
+import { CmsUsersComponent } from './cms-menu/cms-users/cms-users.component';
+import { CheckboxModule } from 'primeng/checkbox';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+
 
 
 
@@ -98,6 +106,10 @@ ToastrModule.forRoot();
     UserPaymentMethodsComponent,
     UserSettingsComponent,
     UserActivityLogComponent,
+    CmsDashboardComponent,
+    CmsNavigationComponent,
+    CmsMenuComponent,
+    CmsUsersComponent,
   ],
   imports: [
     BrowserModule,
@@ -119,7 +131,9 @@ ToastrModule.forRoot();
     PanelMenuModule,
     CardModule,
     PanelModule,
-    DropdownModule
+    DropdownModule,
+    CheckboxModule,
+    InputTextareaModule,
   ],
   providers: [CartService, ProductService, UserService],
   bootstrap: [AppComponent],

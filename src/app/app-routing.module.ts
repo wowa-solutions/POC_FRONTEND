@@ -13,6 +13,9 @@ import { MenuPageComponent } from './menu-page/menu-page.component';
 import { AuthGuard } from './auth/auth.guard';
 import { LayoutComponent } from './layout/layout.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { CmsDashboardComponent } from './cms-menu/cms-dashboard/cms-dashboard.component';
+import { CmsMenuComponent } from './cms-menu/cms-menu.component';
+import { CmsUsersComponent } from './cms-menu/cms-users/cms-users.component';
 
 const routes: Routes = [
   {
@@ -41,6 +44,8 @@ const routes: Routes = [
   { path: 'layout', component: LayoutComponent, canActivate: [AuthGuard] },
   { path: 'qr', component: QrScannerComponent, canActivate: [AuthGuard] },
   { path: 'profile', component: UserProfileComponent },
+  { path: 'cms-menu', component: CmsMenuComponent },
+  { path: 'cms-users', component: CmsUsersComponent },
   { path: '**', component: NotFoundPageComponent },
 ];
 
